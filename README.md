@@ -1,6 +1,5 @@
 # Farmer
 ## A lightweight automation tool built for Linux machines 
-*PLUG N PLAY, No client, No other installations required*
 ## Current Version: Development in progress
 
 ### Workflow:
