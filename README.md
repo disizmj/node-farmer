@@ -7,13 +7,13 @@
 
 > Seed 	- Input/script that runs on remote host/server
 
-> Sow 	- Sowing seeds in soil, is deploying the instructions on remote host(s)
+> Sow 	- Sowing seeds in soil, is deploying input instructions on remote host(s)
 
-> Crop 	- Crop is grown, deployment is complete
+> Crop 	- Crop is grown, is deployment complete
 
-> Harvest- Harvesting crop is simply making a snapshot of what's being deployed
+> Harvest- Harvesting crop, is making a snapshot of what's being deployed
 
-> Fruit	- Fruit is a backup, extract fruit to re-deploy seed. It's like backup/recovery feature
+> Fruit	- Fruit is a backup, extract seed from fruit to re-sow seed in soil. It's like recovery/rollback feature
 
 > Plow 	- Is a scripting language used to build seed(input) to farmer
 
