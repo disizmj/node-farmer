@@ -15,9 +15,11 @@
 
 > Fruit	- Fruit is a backup, extract seed from fruit to re-sow seed in soil. It's like recovery/rollback feature
 
-> Plow 	- Is a scripting language used to build seed(input) to farmer
+> Plow 	- A scripting language used to build seed(input) to farmer
 
 > Soil 	- A host or group of hosts used to deploy seed
+
+> Canal	- A waterway to convey water for irrigation, temporary workarea
 
 ### Installation instructions:
 
