@@ -2,8 +2,11 @@
 ## A lightweight automation tool built for Linux machines 
 ## Current Version: Development in progress
 
-### Terminology:
+### Workflow
+
 #### Seed(Input) >>> Sow(Deploy) >>> Crop(Success) >>> Harvest(Snapshot) >>> Fruit(Recovery) >>> Seed(Input)
+
+### Terminology:
 
 > Seed 	- Input/script that runs on remote host/server
 
@@ -22,10 +25,13 @@
 > Canal	- A waterway to convey water for irrigation, temporary workarea
 
 ### Installation instructions:
+
 NIL
 
 ### Usage instructions:
+
 NIL
 
 ### Incremental change log:
+
 NIL
