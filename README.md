@@ -1,10 +1,22 @@
 # farmer
-|| Farmer is an automation tool built for Linux machines || Current Version: Development in progress ||
+|| Farmer - A lightweight automation tool built for Linux machines || Current Version: Development in progress ||
 -------------------------------------------------------------------------------------------------------
 
 Farmer terminology:
 -------------------
+ Seed -----> Sow -----> Crop -----> Harvest -----> Fruit -----> Seed
+(Input)    (Deploy)   (Success)   (Snapshot)     (Recovery)    (Input)
+   |          |
+   |          |
+ .plow       Soil
 
+seed 	- Input/script that runs on remote host/server
+sow 	- Sowing seeds in soil, is deploying the instructions on remote host(s)
+crop 	- Crop is grown, deployment is complete
+Harveat	- Harvesting crop is simply making a snapshot of what's being deployed
+Fruit	- Fruit is a backup, extract fruit to re-deploy seed. It's like backup/recovery feature
+plow 	- Is a scripting language used to build seed(input) to farmer
+soil 	- A host or group of hosts used to deploy seed
 
 Installation instructions:
 --------------------------
