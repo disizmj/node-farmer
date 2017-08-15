@@ -22,9 +22,10 @@
 > Canal	- A waterway to convey water for irrigation, temporary workarea
 
 ### Installation instructions:
-
+NIL
 
 ### Usage instructions:
-
+NIL
 
 ### Incremental change log:
+NIL
