@@ -1,6 +1,6 @@
 # farmer
-|| Farmer - A lightweight automation tool built for Linux machines || Current Version: Development in progress ||
--------------------------------------------------------------------------------------------------------
+##|| Farmer - A lightweight automation tool built for Linux machines || Current Version: Development in progress ||
+
 
 Farmer terminology:
 -------------------
