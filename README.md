@@ -1,8 +1,9 @@
 # Farmer
-## A lightweight automation tool built for Linux machines || Current Version: Development in progress
+## A lightweight automation tool built for Linux machines 
+## Current Version: Development in progress
 
 ### Farmer terminology:
-Seed(Input) ---> Sow(Deploy) ---> Crop(Success) ---> Harvest(Snapshot) ---> Fruit(Recovery) ---> Seed(Input)
+#### Seed(Input) ---> Sow(Deploy) ---> Crop(Success) ---> Harvest(Snapshot) ---> Fruit(Recovery) ---> Seed(Input)
 
 > Seed 	- Input/script that runs on remote host/server
 
