@@ -1,8 +1,9 @@
 # Farmer
 ## A lightweight automation tool built for Linux machines 
+#### (Plug 'N' Play, No package installation required)
 ## Current Version: Development in progress
 
-### Workflow
+### Workflow:
 
 #### Seed(Input) >>> Sow(Deploy) >>> Crop(Success) >>> Harvest(Snapshot) >>> Fruit(Recovery) >>> Seed(Input)
 
