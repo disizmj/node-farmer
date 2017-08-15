@@ -4,11 +4,11 @@
 
 Farmer terminology:
 -------------------
- Seed -----> Sow -----> Crop -----> Harvest -----> Fruit -----> Seed
-(Input)    (Deploy)   (Success)   (Snapshot)     (Recovery)    (Input)
-   |          |
-   |          |
- .plow       Soil
+ Seed -----> Sow -----> Crop -----> Harvest -----> Fruit -----> Seed \n
+(Input)    (Deploy)   (Success)   (Snapshot)     (Recovery)    (Input) \n
+   |          | \n
+   |          | \n
+ .plow       Soil \n
 
 seed 	- Input/script that runs on remote host/server
 sow 	- Sowing seeds in soil, is deploying the instructions on remote host(s)
