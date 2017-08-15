@@ -1,2 +1,2 @@
 # farmer
-Farmer is a powerful and easy to use automation tool
+Farmer is an automaation tool built for Linux machines
