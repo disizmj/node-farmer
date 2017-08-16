@@ -60,4 +60,4 @@ Examples
 ```
 ### Incremental change log:
 
-NIL
+08/16/2017 : (v1.0) Initial development build
