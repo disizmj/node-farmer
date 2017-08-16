@@ -36,7 +36,25 @@ NIL
 
 ### Usage instructions:
 
-NIL
+Usage: ./farmer [option] -user [username] -seed [seedname] -soil [soilname]
+
+Options
+   info : Displays information about existing seeds and soils
+   run  : Start deployment. Requires additional parameters -user, -seed and -soil
+   help : Show this help
+
+Additional Parameters
+   -user : Username used to perform action on remote hosts
+   -seed : Directory containing .plow files
+   -soil : Directory containing host groups
+
+Examples
+   To run deployment
+         ./farmer run -user root -seed install-webserver -soil development
+   To dislay information about existing configuration
+         ./farmer info
+   For help
+         ./farmer help
 
 ### Incremental change log:
 

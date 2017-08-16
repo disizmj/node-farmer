@@ -10,6 +10,12 @@
 #									By Manikumar Juttukonda                                                                        
 #
 #
+echo -e "\nFarmer v1.0"
+echo -e "By Manikumar Juttukonda"
+echo -e "\nA lightweight automation tool built for Linux machines"
+echo -e "Web site: https://clouderscloud.github.io/farmer/"
+
+#variables
 pid=$$
 whereami=`pwd`
 home=${whereami}
@@ -21,3 +27,25 @@ fruits_dir="${home}/fruits";
 soils_dir="${home}/soils";
 seeds="${home}/seeds";
 
+#functions
+function help() {
+	echo -e "\nUsage: $0 [option] -user [username] -seed [seedname] -soil [soilname]"
+	echo -e "\nOptions"
+	echo -e "   info\t: Displays information about existing seeds and soils"
+	echo -e "   run\t: Start deployment. Requires additional parameters -user, -seed and -soil"
+	echo -e "   help\t: Show this help"
+	echo -e "\nAdditional Parameters"
+	echo -e "   -user : Username used to perform action on remote hosts"
+	echo -e "   -seed : Directory containing .plow files"
+	echo -e "   -soil : Directory containing host groups"
+	echo -e "\nExamples"
+	echo -e "   To run deployment"
+	echo -e "\t $0 run -user root -seed install-webserver -soil development"
+	echo -e "   To dislay information about existing configuration"
+	echo -e "\t $0 info "
+	echo -e "   For help"
+	echo -e "\t $0 help"
+	echo -e "\nSee https://clouderscloud.github.io/farmer/ for updates, bug reports, and answers"
+}
+
+help
