@@ -1,9 +1,10 @@
-## A lightweight automation tool built for Linux machines - PLUG 'N' PLAY :rocket:
-### Current Version: Development in progress
+## A lightweight automation tool built for Linux machines
+
+### Current Version: v0.0.1-alpha
 
 ### Workflow:
 
-Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recovery) >> Seed(Input)
+Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recovery)
 
 ### Terminology:
 ```
@@ -55,5 +56,5 @@ Examples
 ```
 ### Incremental change log:
 ```
-08/16/2017 : (v1.0) Initial development build
+08/16/2017 : (v0.0.1)(alpha) Initial development build
 ```
