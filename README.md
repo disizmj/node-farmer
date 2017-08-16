@@ -10,7 +10,7 @@
 
 ### Workflow:
 
-#### Seed(Input) >>> Sow(Deploy) >>> Crop(Success) >>> Harvest(Snapshot) >>> Fruit(Recovery) >>> Seed(Input)
+> Seed(Input) >>> Sow(Deploy) >>> Crop(Success) >>> Harvest(Snapshot) >>> Fruit(Recovery) >>> Seed(Input)
 
 ### Terminology:
 
@@ -30,7 +30,7 @@
 
 > Canal	- A waterway to convey water for irrigation, temporary workarea
 
-### Installation instructions:
+### Download & install instructions:
 
 NIL
 
