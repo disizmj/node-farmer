@@ -35,7 +35,7 @@ _Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recov
 NIL
 
 ### Usage instructions:
-
+```
 Usage: ./farmer [option] -user [username] -seed [seedname] -soil [soilname]
 
 Options
@@ -55,7 +55,7 @@ Examples
          ./farmer info
    For help
          ./farmer help
-
+```
 ### Incremental change log:
 
 NIL
