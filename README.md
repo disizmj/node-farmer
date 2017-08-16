@@ -31,9 +31,11 @@ _Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recov
 - Canal	: A waterway to convey water for irrigation, temporary directory to hold any staging files as needed
 
 ### Download & install instructions:
-
-NIL
-
+```
+$ git clone https://github.com/clouderscloud/farmer.git
+$ cd farmer
+$ ./farmer help
+```
 ### Usage instructions:
 ```
 Usage: ./farmer [option] -user [username] -seed [seedname] -soil [soilname]
@@ -50,11 +52,11 @@ Additional Parameters
 
 Examples
    To run deployment
-         ./farmer run -user root -seed install-webserver -soil development
+         $ ./farmer run -user root -seed install-webserver -soil development
    To dislay information about existing configuration
-         ./farmer info
+         $ ./farmer info
    For help
-         ./farmer help
+         $ ./farmer help
 ```
 ### Incremental change log:
 
