@@ -1,7 +1,7 @@
 ## A lightweight automation tool built for Linux machines
-Minimal Linux is OK. 
+_Minimal Linux is OK. 
 Client/Agent install NOT required.
-Easy to use, pure BASH program.
+Easy to use, pure BASH._
 
 ### Current Version: v0.0.1-alpha
 
