@@ -14,21 +14,21 @@ _Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recov
 
 ### Terminology:
 
-- Seed 	- The input/instructions that runs on remote host/server
+- Seed : The input/instructions that runs on remote host/server
 
-- Sow 	- Sowing seeds in soil, is running input/instructions on remote host(s)
+- Sow : Sowing seeds in soil, is running input/instructions on remote host(s)
 
-- Crop 	- Crop is grown, indicates an successful deployment
+- Crop : Crop is grown, indicates an successful deployment
 
-- Harvest- Harvesting crop, is making a snapshot of successful deployment
+- Harvest : Harvesting crop, is making a snapshot of successful deployment
 
-- Fruit	- Snapshot is saved as fruit in compressed format which can be used for rollback/recovery
+- Fruit	: Snapshot is saved as fruit in compressed format which can be used for rollback/recovery
 
-- Plow 	- A scripting format used to build input, uses extension .plow
+- Plow : A scripting format used to build input, uses extension .plow
 
-- Soil 	- A host or group of hosts where input/instructions are executed
+- Soil : A host or group of hosts where input/instructions are executed
 
-- Canal	- A waterway to convey water for irrigation, temporary directory to hold any staging files as needed
+- Canal	: A waterway to convey water for irrigation, temporary directory to hold any staging files as needed
 
 ### Download & install instructions:
 
