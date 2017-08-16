@@ -10,34 +10,34 @@
 
 ### Workflow:
 
- Seed(Input) >>> Sow(Deploy) >>> Crop(Success) >>> Harvest(Snapshot) >>> Fruit(Recovery) >>> Seed(Input)
+_Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recovery) >> Seed(Input)_
 
 ### Terminology:
 
- Seed 	- Input/script that runs on remote host/server
+- Seed 	- The input/instructions that runs on remote host/server
 
- Sow 	- Sowing seeds in soil, is deploying input instructions on remote host(s)
+- Sow 	- Sowing seeds in soil, is running input/instructions on remote host(s)
 
- Crop 	- Crop is grown, is deployment complete
+- Crop 	- Crop is grown, indicates an successful deployment
 
- Harvest- Harvesting crop, is making a snapshot of what's being deployed
+- Harvest- Harvesting crop, is making a snapshot of successful deployment
 
- Fruit	- Fruit is a backup, extract seed from fruit to re-sow seed in soil. It's like recovery/rollback feature
+- Fruit	- Snapshot is saved as fruit in compressed format which can be used for rollback/recovery
 
- Plow 	- A scripting language used to build seed(input) to farmer
+- Plow 	- A scripting format used to build input, uses extension .plow
 
- Soil 	- A host or group of hosts used to deploy seed
+- Soil 	- A host or group of hosts where input/instructions are executed
 
- Canal	- A waterway to convey water for irrigation, temporary workarea
+- Canal	- A waterway to convey water for irrigation, temporary directory to hold any staging files as needed
 
 ### Download & install instructions:
 
-Coming soon
+NIL
 
 ### Usage instructions:
 
-Coming soon
+NIL
 
 ### Incremental change log:
 
-Coming soon
+NIL
