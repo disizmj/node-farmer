@@ -45,7 +45,7 @@ Usage: ./farmer [option] -user [username] -seed [seedname] -soil [soilname]
 
 Options
    info : Displays information about existing seeds and soils
-   run  : Start deployment. Requires additional parameters -user, -seed and -soil
+   sow  : Start deployment. Requires additional parameters -user, -seed and -soil
    help : Show this help
 
 Additional Parameters
@@ -55,11 +55,13 @@ Additional Parameters
 
 Examples
    To run deployment
-         $ ./farmer run -user root -seed install-webserver -soil development
+         $ ./farmer sow -user root -seed install-webserver -soil development
    To dislay information about existing configuration
          $ ./farmer info
    For help
          $ ./farmer help
+
+   It is always recommended to run 'info' before running 'sow'
 ```
 ### Incremental change log:
 ```
