@@ -13,7 +13,7 @@
 _Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recovery) >> Seed(Input)_
 
 ### Terminology:
-
+```
 - Seed : The input/instructions that runs on remote host/server
 
 - Sow : Sowing seeds in soil, is running input/instructions on remote host(s)
@@ -29,7 +29,7 @@ _Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recov
 - Soil : A host or group of hosts where input/instructions are executed
 
 - Canal	: A waterway to convey water for irrigation, temporary directory to hold any staging files as needed
-
+```
 ### Download & install instructions:
 ```
 $ git clone https://github.com/clouderscloud/farmer.git
