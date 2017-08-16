@@ -59,5 +59,6 @@ Examples
          $ ./farmer help
 ```
 ### Incremental change log:
-
+```
 08/16/2017 : (v1.0) Initial development build
+```
