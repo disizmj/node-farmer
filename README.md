@@ -1,5 +1,5 @@
 ## A lightweight automation tool built for Linux machines
-_Minimal Linux is OK. 
+_Any Linux even minimal is OK. 
 Client/Agent NOT required.
 Easy to use, pure BASH._
 
