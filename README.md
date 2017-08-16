@@ -1,12 +1,12 @@
-                                                __
-                                               / _|
-                                              | |_ __ _ _ __ _ __ ___   ___ _ __
-                                              |  _/ _` | '__| '_ ` _ \ / _ \ '__|
-                                              | || (_| | |  | | | | | |  __/ |
-                                              |_| \__,_|_|  |_| |_| |_|\___|_|
+      __
+     / _|
+    | |_ __ _ _ __ _ __ ___   ___ _ __
+    |  _/ _` | '__| '_ ` _ \ / _ \ '__|
+    | || (_| | |  | | | | | |  __/ |
+    |_| \__,_|_|  |_| |_| |_|\___|_|
 
 ## A lightweight automation tool built for Linux machines - PLUG 'N' PLAY :rocket:
-## Current Version: Development in progress
+### Current Version: Development in progress
 
 ### Workflow:
 
