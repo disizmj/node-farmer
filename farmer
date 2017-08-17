@@ -17,12 +17,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 echo "
-    Farmer v0.0.1-alpha  Copyright (C) 2017  Manikumar Juttukonda
-    This program comes with ABSOLUTELY NO WARRANTY; for details type 'show w'.
-    This is free software, and you are welcome to redistribute it
-    under certain conditions; type 'show c' for details. 
+Farmer v0.0.1-alpha  Copyright (C) 2017  Manikumar Juttukonda
+This program comes with ABSOLUTELY NO WARRANTY; for details type 'show w'.
+This is free software, and you are welcome to redistribute it
+under certain conditions; type 'show c' for details. 
 "
-echo "    See <https://disizjay.github.io/farmer/> for more details."
+echo "See <https://disizjay.github.io/farmer/> for more details."
 
 #variables
 pid=$$
@@ -59,12 +59,18 @@ function help() {
 }
 
 function farmer_info() {
-	echo -e "\nSorry, still in development alpha stage. Please check back later"
+	echo ""
+	echo "Seed: $seed"
+        echo "Soil: $soil"
+	echo -e "\nSorry, farmer is not ready. Please check back later"
 	exit 1
 }
 
 function farmer_sow() {
-	echo -e "\nSorry, still in development alpha stage. Please check back later"
+	echo ""
+	echo "Seed: $seed"
+	echo "Soil: $soil"
+	echo -e "\nSorry, farmer is not ready. Please check back later"
 	exit 1
 }
 
@@ -74,7 +80,7 @@ if [ $# -lt 1 ]; then
 	echo "Error #101: Not enough arguments"
 	help
 	exit 1;
-elif [ $# -gt 4 ]; then
+elif [ $# -gt 7 ]; then
 	echo ""
 	echo "Error #102: Too many aruments"
 	help
@@ -83,29 +89,74 @@ fi
 
 case $1 in
 	sow )
-		if [ $# -ne 4 ]; then
+		if [ $# -ne 7 ]; then
 			echo ""
-			echo "Error #103: Not enough arguments for 'sow' operation"
+			echo "Error #103: Incorrect usage for 'sow' operation"
 			help
 			exit 1;
 		else
-			remote_user=$2
-			seed=$3
-			soil=$4
-			if [[ ! -d "$seeds_dir/$seed" ]] && [[ ! -f "$seeds_dir/$seed/*.plow" ]]
-			then
-				echo ""
-				echo "Error #104: Seed '$seed' do not exit or no .plow files found in seed"
-				exit 1;
-			elif [[ ! -d "$soils_dir/$soil" ]] && [[ ! -f "$soils_dir/$soil/hosts" ]]
-			then
-				echo ""
-				echo "Error #105: Soil '$soil' do not exist or no hosts file found in soil"
-				exit 1;
-			else
-				farmer_info
-				farmer_sow
-			fi
+			case $2 in
+				-user )
+					remote_user=$3
+					;;
+				*)
+					echo ""
+                                        echo "Error #107: Incorrect usage for 'sow' operation"
+                                        help
+                                        exit 1;
+                                        ;;
+			esac
+			case $4 in
+				-seed )
+					seed=$5
+					if [[ ! -d "$seeds_dir/$seed" ]] || [[ ! -f `ls $seeds_dir/$seed/*.plow` ]]
+                        		then
+                                		echo ""
+                                		echo "Error #104: Seed '$seed' do not exit or no .plow files found in seed"
+                                		exit 1;
+					fi
+					;;
+				*)
+					echo ""
+                                        echo "Error #104: Incorrect usage for 'sow' operation"
+                                        help
+                                        exit 1;
+                                        ;;
+			esac
+			case $6 in
+				-soil )
+					soil=$7
+					if [[ ! -d "$soils_dir/$soil" ]] || [[ ! -f "$soils_dir/$soil/hosts" ]]
+                        		then
+                                		echo ""
+                                		echo "Error #105: Soil '$soil' do not exist or no hosts file found in soil"
+                                		exit 1;
+					fi
+					;;
+				*)
+					echo ""
+					echo "Error #105: Incorrect usage for 'sow' operation"
+					help
+					exit 1;
+					;;
+			esac
+		
+			#seed=$3
+			#soil=$4
+			#if [[ ! -d "$seeds_dir/$seed" ]] && [[ ! -f "$seeds_dir/$seed/*.plow" ]]
+			#then
+			#	echo ""
+			#	echo "Error #104: Seed '$seed' do not exit or no .plow files found in seed"
+			#	exit 1;
+			#elif [[ ! -d "$soils_dir/$soil" ]] && [[ ! -f "$soils_dir/$soil/hosts" ]]
+			#then
+			#	echo ""
+			#	echo "Error #105: Soil '$soil' do not exist or no hosts file found in soil"
+			#	exit 1;
+			#else
+			farmer_info
+			farmer_sow
+			#fi
 		fi
 		;;
 	
