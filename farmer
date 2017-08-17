@@ -34,7 +34,7 @@ seconds=0
 canal_dir="${home}/canal";
 fruits_dir="${home}/fruits";
 soils_dir="${home}/soils";
-seeds="${home}/seeds";
+seeds_dir="${home}/seeds";
 
 #functions
 function help() {
@@ -58,7 +58,71 @@ function help() {
 	echo -e "\nSee <https://disizjay.github.io/farmer/> for updates, bug reports, and answers"
 }
 
-help
+function farmer_info() {
+	echo -e "\nSorry, still in development alpha stage. Please check back later"
+	exit 1
+}
 
-echo -e "\nSorry ! Farmer is not yet ready, still in initial development stage. Please check back later"
+function farmer_sow() {
+	echo -e "\nSorry, still in development alpha stage. Please check back later"
+	exit 1
+}
+
+#start
+if [ $# -lt 1 ]; then
+	echo ""
+	echo "Error #101: Not enough arguments"
+	help
+	exit 1;
+elif [ $# -gt 4 ]; then
+	echo ""
+	echo "Error #102: Too many aruments"
+	help
+	exit 1;
+fi
+
+case $1 in
+	sow )
+		if [ $# -ne 4 ]; then
+			echo ""
+			echo "Error #103: Not enough arguments for 'sow' operation"
+			help
+			exit 1;
+		else
+			remote_user=$2
+			seed=$3
+			soil=$4
+			if [[ ! -d "$seeds_dir/$seed" ]] && [[ ! -f "$seeds_dir/$seed/*.plow" ]]
+			then
+				echo ""
+				echo "Error #104: Seed '$seed' do not exit or no .plow files found in seed"
+				exit 1;
+			elif [[ ! -d "$soils_dir/$soil" ]] && [[ ! -f "$soils_dir/$soil/hosts" ]]
+			then
+				echo ""
+				echo "Error #105: Soil '$soil' do not exist or no hosts file found in soil"
+				exit 1;
+			else
+				farmer_info
+				farmer_sow
+			fi
+		fi
+		;;
+	
+	info )
+		farmer_info
+		;;
+
+	help )
+		help
+		exit 1;
+		;;
+
+	*)
+		echo ""
+		echo "Error #106: Usage error"
+		help
+		exit 1;
+		;;
+esac
 #end
