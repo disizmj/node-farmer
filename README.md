@@ -17,9 +17,9 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 
  Crop	: Crop is grown, indicates an successful deployment
 
- Harvest	: Harvesting crop, is making a snapshot of successful deployment
+ Harvest: Harvesting crop, is making a snapshot of successful deployment
 
- Fruit**	: Snapshot is saved as fruit in compressed format which can be used for rollback/recovery
+ Fruit**: Snapshot is saved as fruit in compressed format which can be used for rollback/recovery
 
  Plow	: A scripting format used to build input, uses extension .plow
 
