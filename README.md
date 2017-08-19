@@ -1,15 +1,15 @@
-## A lightweight automation tool built for Linux machines
+# A lightweight automation tool built for Linux machines
 _Minimal Linux is OK. 
 Client/Agent NOT required.
 Easy to use, pure BASH._
 
-### Current Stable Version: v1.0
+## Current Stable Version: v1.0
 
-### Workflow:
+## Workflow:
 
 Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recovery)
 
-### Terminology:
+## Terminology:
 ```
  Seed	: The input/instructions that runs on remote host/server
 
@@ -27,13 +27,13 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 
  Canal	: A waterway to convey water for irrigation, temporary directory to hold any staging files as needed
 ```
-### Download & run instructions:
+## Download & run instructions:
 ```
 $ git clone https://github.com/disizjay/farmer.git
 $ cd farmer
 $ ./farmer help
 ```
-### Usage instructions:
+## Usage instructions:
 ```
 Usage: ./farmer [option] --user [username] --seed [seedname] --soil [soilname]
 
@@ -59,9 +59,7 @@ Examples
 
    It is always recommended to run 'info' before running 'sow'
 ```
-### Sample STDOUT logs
-
-### Incremental change log:
+## Incremental change log:
 ```
 08/16/2017 : (v0.0.1)(alpha) Initial development build
 08/18/2017 : (v1.0) First stable release
