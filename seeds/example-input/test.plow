@@ -1,5 +1,0 @@
-args:user=testuser;dir=/root;perm=750
-
-command:useradd $user;skip_failure=false
-command:mkdir $dir/test;skip_failure=false
-command:chmod -R $perm $dir/test;skip_failure=true
