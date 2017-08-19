@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#-----------------------------------------------------------------------------
 #    Farmer - A lightweight automation tool built for Linux machines
 #    Copyright (C) 2017  Manikumar Juttukonda <manikumar.juttukonda@gmail.com>
 #
@@ -16,13 +16,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-echo "
-Farmer v0.0.1-alpha  Copyright (C) 2017  Manikumar Juttukonda
-This program comes with ABSOLUTELY NO WARRANTY; for details type 'show w'.
-This is free software, and you are welcome to redistribute it
-under certain conditions; type 'show c' for details. 
-"
-echo "See <https://disizjay.github.io/farmer/> for more details."
+#-----------------------------------------------------------------------------
 
 #variables
 pid=$$
@@ -36,22 +30,27 @@ fruits_dir="${home}/fruits";
 soils_dir="${home}/soils";
 seeds_dir="${home}/seeds";
 
+#arguments
+remote_user=$3
+seed=$5
+soil=$7
+
 #functions
 function help() {
-	echo -e "\nUsage: $0 [option] -user [username] -seed [seedname] -soil [soilname]"
+	echo -e "\nUsage: $0 [option] --user [username] --seed [seedname] --soil [soilname]"
 	echo -e "\nOptions"
 	echo -e "   info\t: Displays information about existing seeds and soils"
-	echo -e "   sow\t: Start deployment. Requires additional parameters -user, -seed and -soil"
+	echo -e "   sow\t: Start deployment. Requires additional parameters --user, --seed and --soil"
 	echo -e "   help\t: Show this help"
 	echo -e "\nAdditional Parameters"
-	echo -e "   -user : Username used to perform action on remote hosts"
-	echo -e "   -seed : Directory containing .plow files"
-	echo -e "   -soil : Directory containing host groups"
+	echo -e "   --user : Username used to perform action on remote hosts"
+	echo -e "   --seed : Directory containing .plow files"
+	echo -e "   --soil : Directory containing host groups"
 	echo -e "\nExamples"
 	echo -e "   To run deployment"
-	echo -e "\t $0 sow -user root -seed install-webserver -soil development"
+	echo -e "\t $0 sow --user root --seed install-webserver --soil development"
 	echo -e "   To dislay information about existing configuration"
-	echo -e "\t $0 info "
+	echo -e "\t $0 info --user root --seed install-webserver --soil development"
 	echo -e "   For help"
 	echo -e "\t $0 help"
 	echo -e "   It is always recommended to run 'info' before running 'sow'"
@@ -60,21 +59,66 @@ function help() {
 
 function farmer_info() {
 	echo ""
-	echo "Seed: $seed"
-        echo "Soil: $soil"
-	echo -e "\nSorry, farmer is not ready. Please check back later"
-	exit 1
+	echo "Info: Farmer is verifying the quality of seeds and soils"
+	echo ""
+        echo "  Soil: $soil"
+	echo "  (`cat $soils_dir/$soil/hosts 2>/dev/null | wc -l`) number of soils found"
+	echo "  Seed: $seed"
+	echo "  (`find $seeds_dir/$seed -type f 2>/dev/null | wc -l`) number of seeds found"
+	echo ""
+	echo "Verifying SSH and remote user"
+	while read hn;
+	do
+		status=$(ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn echo ok 2>&1)
+		if [[ $status == ok ]] ; then
+			echo "[$hn] SSH setup verified"
+			ssh -o StrictHostKeyChecking=no $hn 'id -u root' &>/dev/null
+			if [ $? -ne 0 ]; then
+				echo "[$hn] Remote user[$remote_user] do not exist"
+				rc=1
+			else
+				echo "[$hn] Remote user[$remote_user] verified"
+			fi
+			
+		elif [[ $status == "Permission denied"* ]]; then
+			echo "[$hn] SSH setup failed. Make sure passwordless ssh is established between current and remote hosts"
+			rc=1
+		else
+			echo "[$hn] SSH - Unable to connect"
+			rc=1
+		fi
+	done < $soils_dir/$soil/hosts
+	echo ""
+	return $rc
 }
 
 function farmer_sow() {
 	echo ""
-	echo "Seed: $seed"
-	echo "Soil: $soil"
-	echo -e "\nSorry, farmer is not ready. Please check back later"
-	exit 1
+	echo "Info: Farmer is deploying seeds and soils"
+	rm $canal_dir/${seed}_${pid}.sh &>/dev/null
+	echo "#!/bin/sh -e" >> $canal_dir/${seed}_${pid}.sh
+	for i in `find $seeds_dir/$seed -type f | sort`
+	do
+	cat $i | grep "arg" | awk -F":::" '{print $2}' >> $canal_dir/${seed}_${pid}.sh
+	cat $i | grep "command" | awk -F":::" '{print $2}' >> $canal_dir/${seed}_${pid}.sh
+	done
+	while read hn;
+	do
+		echo -e "\nSowing seeds on host[$hn]"
+		ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn 'bash -s -x' < $canal_dir/${seed}_${pid}.sh
+		echo "Farmer completed sowing the seeds in soil [$hn]"
+	done < $soils_dir/$soil/hosts
+	rm $canal_dir/${seed}_${pid}.sh
+	echo -e "\nAll commands were executed on remote servers. Please check log for any errors.."
 }
 
-#start
+function farmer_harvest() {
+	echo ""
+	echo "Nothing to harvest right now"
+	echo "Thank you!"
+}
+
+#start of the script
 if [ $# -lt 1 ]; then
 	echo ""
 	echo "Error #101: Not enough arguments"
@@ -87,6 +131,19 @@ elif [ $# -gt 7 ]; then
 	exit 1;
 fi
 
+echo -e '
+              __                                      __   ___
+             / _|                                    /_ | / _ \
+            | |_ __ _ _ __ _ __ ___   ___ _ __  __   _| || | | |
+            |  _/ _` | '\''__| '\''_ ` _ \ / _ \ '\''__| \ \ / / || | | |
+            | || (_| | |  | | | | | |  __/ |     \ V /| || |_| |
+            |_| \__,_|_|  |_| |_| |_|\___|_|      \_/ |_(_)___/
+
+         Visit <https://disizjay.github.io/farmer/> for more details
+
+'
+
+#main start
 case $1 in
 	sow )
 		if [ $# -ne 7 ]; then
@@ -96,7 +153,7 @@ case $1 in
 			exit 1;
 		else
 			case $2 in
-				-user )
+				--user )
 					remote_user=$3
 					;;
 				*)
@@ -107,7 +164,7 @@ case $1 in
                                         ;;
 			esac
 			case $4 in
-				-seed )
+				--seed )
 					seed=$5
 					if [[ ! -d "$seeds_dir/$seed" ]] || [[ ! -f `ls $seeds_dir/$seed/*.plow` ]]
                         		then
@@ -124,7 +181,7 @@ case $1 in
                                         ;;
 			esac
 			case $6 in
-				-soil )
+				--soil )
 					soil=$7
 					if [[ ! -d "$soils_dir/$soil" ]] || [[ ! -f "$soils_dir/$soil/hosts" ]]
                         		then
@@ -140,28 +197,85 @@ case $1 in
 					exit 1;
 					;;
 			esac
-		
-			#seed=$3
-			#soil=$4
-			#if [[ ! -d "$seeds_dir/$seed" ]] && [[ ! -f "$seeds_dir/$seed/*.plow" ]]
-			#then
-			#	echo ""
-			#	echo "Error #104: Seed '$seed' do not exit or no .plow files found in seed"
-			#	exit 1;
-			#elif [[ ! -d "$soils_dir/$soil" ]] && [[ ! -f "$soils_dir/$soil/hosts" ]]
-			#then
-			#	echo ""
-			#	echo "Error #105: Soil '$soil' do not exist or no hosts file found in soil"
-			#	exit 1;
-			#else
 			farmer_info
-			farmer_sow
-			#fi
+			if [[ $rc -eq 1 ]]; then
+                                echo "Error: Integrity check failed"
+                                echo "Good bye!"
+                                exit 1
+			else
+				echo "Info: Integrity check success"
+				farmer_sow
+				if [ $? -eq 0 ]; then
+					farmer_harvest
+				else
+					echo "Errors occured while sowing soil, deploying seed"
+					exit 1
+				fi
+                        fi
 		fi
 		;;
 	
 	info )
-		farmer_info
+		if [ $# -ne 7 ]; then
+                        echo ""
+                        echo "Error #103: Incorrect usage for 'info' operation"
+                        help
+                        exit 1;
+                else
+                        case $2 in
+                                --user )
+                                        remote_user=$3
+                                        ;;
+                                *)
+                                        echo ""
+                                        echo "Error #107: Incorrect usage for 'info' operation"
+                                        help
+                                        exit 1;
+                                        ;;
+                        esac
+                        case $4 in
+                                --seed )
+                                        seed=$5
+                                        if [[ ! -d "$seeds_dir/$seed" ]] || [[ ! -f `ls $seeds_dir/$seed/*.plow` ]]
+                                        then
+                                                echo ""
+                                                echo "Error #104: Seed '$seed' do not exit or no .plow files found in seed"
+                                                exit 1;
+                                        fi
+                                        ;;
+                                *)
+                                        echo ""
+                                        echo "Error #104: Incorrect usage for 'info' operation"
+                                        help
+                                        exit 1;
+                                        ;;
+                        esac
+                        case $6 in
+                                --soil )
+                                        soil=$7
+                                        if [[ ! -d "$soils_dir/$soil" ]] || [[ ! -f "$soils_dir/$soil/hosts" ]]
+                                        then
+                                                echo ""
+                                                echo "Error #105: Soil '$soil' do not exist or no hosts file found in soil"
+                                                exit 1;
+                                        fi
+                                        ;;
+                                *)
+                                        echo ""
+                                        echo "Error #105: Incorrect usage for 'info' operation"
+                                        help
+                                        exit 1;
+                                        ;;
+                        esac
+                        farmer_info
+			if [[ $rc -eq 1 ]]; then
+				echo "Error: Integrity check failed"
+				echo "Good bye!"
+				exit 1
+			else
+                                echo "Info: Integrity check success"
+			fi
+                fi
 		;;
 
 	help )
@@ -176,4 +290,4 @@ case $1 in
 		exit 1;
 		;;
 esac
-#end
+#end of the script

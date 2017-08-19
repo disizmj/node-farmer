@@ -1,3 +1,2 @@
-args:package_name="git"
-
-command:if test ! $(which git); then yum install -y git; fi:::skip_fail=false
+args:::package_name="git"
+command:::if test ! $(which git); then yum install -y git; fi

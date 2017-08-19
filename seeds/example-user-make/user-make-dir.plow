@@ -1,0 +1,8 @@
+arg:::user_name="demouser";
+arg:::dir_name="/root/demodir";
+arg:::file_name="file_demo";
+
+command:::useradd $user_name
+command:::mkdir -p $dir_name
+command:::touch $dir_name/$file_name
+command:::echo "welcome to farmer" > $dir_name/$file_name
