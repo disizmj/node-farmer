@@ -23,6 +23,7 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 	  See few examples in (../seeds) directory
 
  Soil	: A host or group of hosts where input/instructions are executed
+	  See few examples in (../soils) directory
 
  Canal	: A waterway to convey water for irrigation, temporary directory to hold any staging files as needed
 
