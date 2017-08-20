@@ -16,7 +16,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #-----------------------------------------------------------------------------
-# Current Stable Version: v1.0.2
+# Current Build: v1.0.2
 # Incremental change log:
 # 08/16/2017 : (v0.0.1)(alpha) Initial development build
 # 08/18/2017 : (v1.0) First stable release
@@ -170,7 +170,7 @@ echo -e '
             |_| \__,_|_|  |_| |_| |_|\___|_|      \_/ |_(_)___/
 
          Visit <https://disizjay.github.io/farmer/> for more details
-
+			Current Build: v1.0.2	
 '
 
 #kickstart
