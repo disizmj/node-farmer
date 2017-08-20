@@ -125,7 +125,7 @@ function farmer_sow() {
 		sleep 10;
 	done
 	echo -e "\nInfo: No active threads"
-	echo -e "\nCommands finished executing on remote server(s). Please check logs[${canal_dir}/${seed}_*] for any errors"
+	echo -e "\nCommands finished execution on remote server(s). Please check logs[${canal_dir}/${seed}_*] for any errors"
 }
 
 function farmer_cleanup() {
