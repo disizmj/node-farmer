@@ -24,6 +24,8 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
  Soil	: A host or group of hosts where input/instructions are executed
 
  Canal	: A waterway to convey water for irrigation, temporary directory to hold any staging files as needed
+
+**Harvest and Fruit functionalities aren't available in this release. Upcoming releases will support those functionalities.
 ```
 ## Download & run instructions:
 ```
