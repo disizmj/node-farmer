@@ -29,6 +29,11 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 
 **Harvest and Fruit functionalities aren't available in this release. Upcoming releases will support these functionalities.
 ```
+### Pre-requisites
+```
+ *Required passwordless SSH logon setup between local and remote servers
+  "How to" reference [here](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id)
+```
 ## Download & run instructions:
 ```
 $ git clone https://github.com/disizjay/farmer.git
