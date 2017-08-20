@@ -66,4 +66,10 @@ Examples
 08/19/2017 : (v1.0.1) Background process manager
 08/20/2017 : (v1.0.2) Implemented GC for process cleanup
 ```
-Please submit your issues here <https://github.com/disizjay/farmer/issues/new>. Thank you and Happy Farming !
+How to contibute this project ? 
+Please see [Contributing](https://github.com/disizjay/farmer/blob/master/CONTRIBUTING.md)
+
+Issues ?
+Please submit issues [here](https://github.com/disizjay/farmer/issues/new)
+
+Thank you and Happy Farming !
