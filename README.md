@@ -48,11 +48,11 @@ Additional Parameters
    --soil : Directory containing host groups
 
 Examples
-   To run deployment
-         $ ./farmer sow --user root --seed example-user-make --soil example-development
-
    To dislay information about existing configuration
          $ ./farmer info --user root --seed example-user-make --soil example-development
+
+   To run deployment
+         $ ./farmer sow --user root --seed example-user-make --soil example-development
 
    For help
          $ ./farmer help
