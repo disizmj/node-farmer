@@ -125,7 +125,7 @@ function farmer_harvest() {
 	echo "Thank you!"
 }
 
-#start of the script
+#start
 if [ $# -lt 1 ]; then
 	echo ""
 	echo "Error #101: Not enough arguments"
@@ -297,4 +297,4 @@ case $1 in
 		exit 1;
 		;;
 esac
-#end of the script
+#end
