@@ -25,7 +25,7 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 
  Canal	: A waterway to convey water for irrigation, temporary directory to hold any staging files as needed
 
-**Harvest and Fruit functionalities aren't available in this release. Upcoming releases will support those functionalities.
+**Harvest and Fruit functionalities aren't available in this release. Upcoming releases will support these functionalities.
 ```
 ## Download & run instructions:
 ```
