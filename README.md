@@ -4,9 +4,9 @@
 ## Current Stable Version: v1.0.2
 
 ## Workflow:
-
+```
 Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recovery)
-
+```
 ## Terminology:
 ```
  Seed	: The input/instructions that runs on remote host/server
