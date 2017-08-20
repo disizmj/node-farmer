@@ -29,7 +29,7 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 
 **Harvest and Fruit functionalities aren't available in this release. Upcoming releases will support these functionalities.
 ```
-### Pre-requisites
+## Pre-requisites
 ```
  *Required passwordless SSH logon setup between local and remote servers
 ```
