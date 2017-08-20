@@ -105,11 +105,18 @@ function farmer_sow() {
 	while read hn;
 	do
 		echo -e "\nSowing seeds on host[$hn]"
-		ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn 'bash -s -x' < $canal_dir/${seed}_${pid}.sh
-		echo "Farmer completed sowing the seeds in soil [$hn]"
+		ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn 'bash -s -x' < $canal_dir/${seed}_${pid}.sh &>${canal_dir}/${seed}_${hn}_${pid}.log &	
 	done < $soils_dir/$soil/hosts
 	rm $canal_dir/${seed}_${pid}.sh
-	echo -e "\nAll commands were executed on remote servers. Please check log for any errors.."
+	sleep 10
+	while [[ `pstree -pan ${pid} 2>/dev/null | cut -d"," -f2 | cut -d" " -f1 | wc -l` -ne 5 ]];
+	do
+		BACKGP=`pstree -pan ${pid} 2>/dev/null | cut -d"," -f2 | cut -d" " -f1 | wc -l`
+		echo "Waitig on ${BACKGP} threads to complete"
+		sleep 10;
+	done
+	echo "All threads completed !"
+	echo -e "\nAll commands were executed on remote server(s). Please check logs[${canal_dir}/${seed}_*] for any errors"
 }
 
 function farmer_harvest() {
