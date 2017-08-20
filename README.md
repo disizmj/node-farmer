@@ -20,6 +20,7 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
  Fruit**: Snapshot is saved as fruit in compressed format which can be used for rollback/recovery
 
  Plow	: A scripting format used to build input, uses extension .plow
+	  See few examples in (../seeds) directory
 
  Soil	: A host or group of hosts where input/instructions are executed
 
