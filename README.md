@@ -32,8 +32,9 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 ### Pre-requisites
 ```
  *Required passwordless SSH logon setup between local and remote servers
-  "How to" reference [here](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id)
 ```
+  "How to" reference [here](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id)
+
 ## Download & run instructions:
 ```
 $ git clone https://github.com/disizjay/farmer.git
