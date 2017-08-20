@@ -33,7 +33,7 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 ```
  *Required passwordless SSH logon setup between local and remote servers
 ```
-  Reference('how-to') [link](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id) [Credits: [RAMESH NATARAJAN](https://www.facebook.com/thegeekstuff/)]
+  Reference('how-to') [link](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id) [Credits: [Ramesh Natarajan](http://www.thegeekstuff.com/about/)]
 
 ## Download & run instructions:
 ```
