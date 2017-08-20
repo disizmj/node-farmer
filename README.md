@@ -71,5 +71,3 @@ Please see [contributing](https://github.com/disizjay/farmer/blob/master/CONTRIB
 
 ## Issues ?
 Please submit issues [here](https://github.com/disizjay/farmer/issues/new)
-
-Thank you and Happy Farming !
