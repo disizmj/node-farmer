@@ -1,0 +1,8 @@
++ user_name=demouser
++ dir_name=/root/demodir
++ file_name=file_demo
++ useradd demouser
+useradd: user 'demouser' already exists
++ mkdir -p /root/demodir
++ touch /root/demodir/file_demo
++ echo 'welcome to farmer'

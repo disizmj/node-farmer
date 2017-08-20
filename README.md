@@ -1,7 +1,7 @@
 # A lightweight automation tool built for Linux machines
 ### Minimal OS is absolutely OK | Client/Agent NOT required | Pure BASH
 
-## Current Stable Version: v1.0.1
+## Current Stable Version: v1.0.2
 
 ## Workflow:
 
@@ -63,5 +63,6 @@ Examples
 ```
 08/16/2017 : (v0.0.1)(alpha) Initial development build
 08/18/2017 : (v1.0) First stable release
-08/20/2017 : (v1.0.1) Background process manager
+08/19/2017 : (v1.0.1) Background process manager
+08/20/2017 : (v1.0.2) Implemented GC for process cleanup
 ```
