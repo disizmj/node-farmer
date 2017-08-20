@@ -103,22 +103,26 @@ function farmer_sow() {
 	echo "Info: Farmer is deploying seeds in soils"
 	rm $canal_dir/${seed}_${pid}.sh &>/dev/null
 	echo "#!/bin/sh -e" >> $canal_dir/${seed}_${pid}.sh
-	echo "" >> $canal_dir/${seed}_${pid}.sh
 	for i in `find $seeds_dir/$seed -type f | sort`
 	do
 	echo "" >> $canal_dir/${seed}_${pid}.sh
 	echo "#${i}" >> $canal_dir/${seed}_${pid}.sh
 	cat $i | grep "arg" | awk -F":::" '{print $2}' >> $canal_dir/${seed}_${pid}.sh
-	cat $i | grep "command" | awk -F":::" '{print $2}' >> $canal_dir/${seed}_${pid}.sh
+	cat $i | grep "command" | awk -F":::" '{print $2}' | awk '{print $0, "; if [ $? -ne 0 ]; then echo 'farm:::failed'; exit 1; else echo 'farm:::success'; fi"}' >> $canal_dir/${seed}_${pid}.sh
 	done
 	while read hn;
 	do
 		echo -e "\n Sowing seeds on host[$hn]"
-		ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn 'bash -s -x' < $canal_dir/${seed}_${pid}.sh &>${canal_dir}/${seed}_${hn}_${pid}.log &	
+		ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn 'bash -s -x' < $canal_dir/${seed}_${pid}.sh &>${canal_dir}/${seed}_${hn}_${pid}.log &
+		pstree -pan ${pid} | grep "ssh\|BatchMode=yes" &>/dev/null
+		if [ $? -ne 0 ]; then
+			echo "SSH remote connect failed. Please retry again."
+			exit 1
+		fi
 	done < $soils_dir/$soil/hosts
 	echo ""
-	sleep 10;
-	while [[ `pstree -pan ${pid} 2>/dev/null | cut -d"," -f2 | cut -d" " -f1 | wc -l` -ne 6 ]];
+	sleep 5;
+	while [[ `pstree -pan ${pid} 2>/dev/null | cut -d"," -f2 | cut -d" " -f1 | wc -l` -ge 6 ]];
 	do
 		BACKGP=`pstree -pan ${pid} 2>/dev/null | cut -d"," -f2 | cut -d" " -f1 | wc -l`
 		echo "Info: Waitig on (${BACKGP}) active thread(s)"
@@ -126,7 +130,20 @@ function farmer_sow() {
 	done
 	echo -e "\nInfo: No active threads"
 	echo -e "\nCommands finished execution on remote server(s)"
-	echo -e " Check logs[${canal_dir}/${seed}_*] for any errors"
+	echo -e "\nSummary:"
+	echo -e "------------------------------------------------"
+	for i in `find $canal_dir -type f | grep "${pid}.log"`
+	do
+		echo -e " Seed log: `echo $i | rev | cut -d"/" -f1 | rev`"
+		TOTAL=`cat $canal_dir/${seed}_${pid}.sh | grep "farm:::success" | wc -l`
+		SUCCESS=`cat $i | grep "farm:::success" | grep -v "+" | wc -l`
+		FAILED=`cat $i | grep "farm:::failed" | grep -v "+" | wc -l`
+		echo -e " (${SUCCESS}) succeeded"
+		echo -e " (${FAILED}) failed"
+		echo -e "\n Commands: Total (${TOTAL}) Succeeded (${SUCCESS}) Failed (${FAILED})"
+		echo -e "------------------------------------------------"
+	done
+	echo -e "\nCheck logs[${canal_dir}/${seed}_*] for entire logs"
 }
 
 function farmer_cleanup() {
@@ -142,9 +159,9 @@ function farmer_cleanup() {
 
 function farmer_harvest() {
 	echo ""
-	echo "Nothing to harvest right now. Feature unavailable in this build."
+	#echo "Nothing to harvest right now. Feature unavailable in this build."
 	rm $canal_dir/${seed}_${pid}.sh
-	echo "Thank you!"
+	#echo "Thank you!"
 }
 
 #start
