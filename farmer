@@ -100,29 +100,32 @@ function farmer_info() {
 
 function farmer_sow() {
 	echo ""
-	echo "Info: Farmer is deploying seeds and soils"
+	echo "Info: Farmer is deploying seeds in soils"
 	rm $canal_dir/${seed}_${pid}.sh &>/dev/null
 	echo "#!/bin/sh -e" >> $canal_dir/${seed}_${pid}.sh
+	echo "" >> $canal_dir/${seed}_${pid}.sh
 	for i in `find $seeds_dir/$seed -type f | sort`
 	do
+	echo "" >> $canal_dir/${seed}_${pid}.sh
+	echo "#${i}" >> $canal_dir/${seed}_${pid}.sh
 	cat $i | grep "arg" | awk -F":::" '{print $2}' >> $canal_dir/${seed}_${pid}.sh
 	cat $i | grep "command" | awk -F":::" '{print $2}' >> $canal_dir/${seed}_${pid}.sh
 	done
 	while read hn;
 	do
-		echo -e "\nSowing seeds on host[$hn]"
+		echo -e "\n Sowing seeds on host[$hn]"
 		ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn 'bash -s -x' < $canal_dir/${seed}_${pid}.sh &>${canal_dir}/${seed}_${hn}_${pid}.log &	
 	done < $soils_dir/$soil/hosts
-	rm $canal_dir/${seed}_${pid}.sh
-	sleep 10
+	echo ""
+	sleep 10;
 	while [[ `pstree -pan ${pid} 2>/dev/null | cut -d"," -f2 | cut -d" " -f1 | wc -l` -ne 5 ]];
 	do
 		BACKGP=`pstree -pan ${pid} 2>/dev/null | cut -d"," -f2 | cut -d" " -f1 | wc -l`
-		echo "Waitig on (${BACKGP}) thread(s) to complete"
+		echo "Info: Waitig on (${BACKGP}) active thread(s)"
 		sleep 10;
 	done
-	echo "All threads completed !"
-	echo -e "\nAll commands were executed on remote server(s). Please check logs[${canal_dir}/${seed}_*] for any errors"
+	echo -e "\nInfo: No active threads"
+	echo -e "\nCommands finished executing on remote server(s). Please check logs[${canal_dir}/${seed}_*] for any errors"
 }
 
 function farmer_cleanup() {
@@ -139,6 +142,7 @@ function farmer_cleanup() {
 function farmer_harvest() {
 	echo ""
 	echo "Nothing to harvest right now"
+	rm $canal_dir/${seed}_${pid}.sh
 	echo "Thank you!"
 }
 
@@ -223,13 +227,13 @@ case $1 in
 					exit 1;
 					;;
 			esac
-			farmer_info
-			if [[ $rc -eq 1 ]]; then
-                                echo "Error: Integrity check failed"
-                                echo "Good bye!"
-                                exit 1
-			else
-				echo "Info: Integrity check success"
+			#farmer_info
+			#if [[ $rc -eq 1 ]]; then
+                        #        echo "Error: Integrity check failed"
+                        #        echo "Good bye!"
+                        #        exit 1
+			#else
+			#	echo "Info: Integrity check success"
 				farmer_sow
 				if [ $? -eq 0 ]; then
 					farmer_harvest
@@ -237,7 +241,7 @@ case $1 in
 					echo "Errors occured while sowing soil, deploying seed"
 					exit 1
 				fi
-                        fi
+                        #fi
 		fi
 		;;
 	
