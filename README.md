@@ -1,7 +1,7 @@
 # A lightweight automation tool built for [Linux](https://en.wikipedia.org/wiki/Linux) machines
 ### No client/agent installation | Pure [BASH](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) over [SSH](https://en.wikipedia.org/wiki/Secure_Shell) | PLUG 'N' PLAY :rocket:
 
-## Current Build: v1.0.2
+## Current Build: v1.0.3
 
 ## Workflow:
 ```
@@ -73,6 +73,7 @@ Examples
 08/18/2017 : (v1.0) First stable release
 08/19/2017 : (v1.0.1) Background process manager
 08/20/2017 : (v1.0.2) GC implementation and improved error handling
+08/21/2017 : (v1.0.3) Minor bug fixes
 ```
 ## How to contibute ? 
 Please see [contributing](https://github.com/disizjay/farmer/blob/master/CONTRIBUTING.md)

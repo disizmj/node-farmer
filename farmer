@@ -16,12 +16,12 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #-----------------------------------------------------------------------------
-# Current Build: v1.0.2
 # Incremental change log:
-# 08/16/2017 : (v0.0.1)(alpha) Initial development build
-# 08/18/2017 : (v1.0) First stable release
-# 08/19/2017 : (v1.0.1) Background process manager
-# 08/20/2017 : (v1.0.2) Implemented GC for process cleanup
+#08/16/2017 : (v0.0.1)(alpha) Initial development build
+#08/18/2017 : (v1.0) First stable release
+#08/19/2017 : (v1.0.1) Background process manager
+#08/20/2017 : (v1.0.2) GC implementation and improved error handling
+#08/21/2017 : (v1.0.3) Minor bug fixes
 #-----------------------------------------------------------------------------
 
 #variables
@@ -75,10 +75,10 @@ function farmer_info() {
 	echo "Verifying SSH and remote user"
 	while read hn;
 	do
-		status=$(ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn echo ok 2>&1)
+		status=$(ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn echo ok 2>/dev/null)
 		if [[ $status == ok ]] ; then
 			echo "[$hn] SSH setup verified"
-			ssh -o StrictHostKeyChecking=no $hn 'id -u root' &>/dev/null
+			ssh -o StrictHostKeyChecking=no $hn "id -u $remote_user" &>/dev/null
 			if [ $? -ne 0 ]; then
 				echo "[$hn] Remote user[$remote_user] do not exist"
 				rc=1
