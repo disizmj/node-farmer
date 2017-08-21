@@ -149,7 +149,7 @@ function farmer_sow() {
 function farmer_cleanup() {
 	echo -e "\nKill signal received"
 	echo "Initiating GC"
-	while [[ `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | cut -d"," -f2 | cut -d" " -f1 | wc -l` -gt 2 ]];
+	while [[ `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | cut -d"," -f2 | cut -d" " -f1 | wc -l` -gt 4 ]];
 	do
 		kill -9 `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | cut -d"," -f2 | cut -d" " -f1 | tr '\n' ' '` 2>/dev/null 1>/dev/null
 	done
