@@ -114,10 +114,10 @@ function farmer_sow() {
 	do
 		echo -e "\n Sowing seeds on host[$hn]"
 		ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn 'bash -s -x' < $canal_dir/${seed}_${pid}.sh &>${canal_dir}/${seed}_${hn}_${pid}.log &
-		pstree -pan ${pid} | grep "ssh\|BatchMode=yes" &>/dev/null
+		pstree -pan ${pid} | grep "ssh\&BatchMode=yes\&${hn}" &>/dev/null
 		if [ $? -ne 0 ]; then
-			echo "SSH remote connect failed. Please retry again."
-			exit 1
+			echo "SSH remote connect failed on host[$hn]. Please retry again."
+			continue
 		fi
 	done < $soils_dir/$soil/hosts
 	echo ""
