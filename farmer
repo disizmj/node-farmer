@@ -137,8 +137,9 @@ farmer_sow() {
 		sleep 10;
 	done
 	echo -e "\nInfo: No active threads"
-	echo -e "\nCommands finished execution on remote server(s)"
-	echo -e "\nSummary:"
+	echo -e "\nPrinting out execution summary. Please wait"
+	sleep 3
+	echo -e "\nSUMMARY:"
 	echo -e "------------------------------------------------"
 	for i in `find $canal_dir -type f | grep "${pid}.log"`
 	do
@@ -197,7 +198,7 @@ echo -e '
             |_| \__,_|_|  |_| |_| |_|\___|_|      \_/ |_(_)___/
 
          Visit <https://disizjay.github.io/farmer/> for more details
-			Current Build: v1.0.2	
+			    Current Build: v1.0.3	
 '
 
 #kickstart
