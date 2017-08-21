@@ -1,9 +1,0 @@
-farm:::failed
-+ user_name=demouser
-+ dir_name=/root/demodir
-+ file_name=file_demo
-+ useradd demouser
-useradd: user 'demouser' already exists
-+ '[' 9 -ne 0 ']'
-+ echo farm:::failed
-+ exit 1
