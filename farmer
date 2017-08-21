@@ -149,10 +149,10 @@ function farmer_sow() {
 function farmer_cleanup() {
 	echo -e "\nKill signal received"
 	echo "Initiating GC"
-	while [[ `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | grep "BatchMode=yes" | wc -l` -ne 0 ]];
+	while [[ `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | wc -l` -gt 1 ]];
 	do
-		kill -9 `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | grep "BatchMode=yes" | cut -d"," -f2 | cut -d" " -f1 | tr '\n' ' '` 2>/dev/null 1>/dev/null
-		rm $canal_dir/${seed}_${pid}.sh
+		kill -9 `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | cut -d"," -f2 | cut -d" " -f1 | tr '\n' ' '` 2>/dev/null 1>/dev/null
+		rm $canal_dir/${seed}_${pid}.sh &>/dev/null
 	done
 	echo "Process cleanup completed"
 	exit 1
@@ -161,7 +161,7 @@ function farmer_cleanup() {
 function farmer_harvest() {
 	echo ""
 	#echo "Nothing to harvest right now. Feature unavailable in this build."
-	rm $canal_dir/${seed}_${pid}.sh
+	rm $canal_dir/${seed}_${pid}.sh &>/dev/null
 	#echo "Thank you!"
 }
 
