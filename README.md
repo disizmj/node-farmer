@@ -72,7 +72,7 @@ Examples
 08/16/2017 : (v0.0.1)(alpha) Initial development build
 08/18/2017 : (v1.0) First stable release
 08/19/2017 : (v1.0.1) Background process manager
-08/20/2017 : (v1.0.2) Implemented GC for process cleanup
+08/20/2017 : (v1.0.2) GC implementation. Minor fixes and enhancements.
 ```
 ## How to contibute ? 
 Please see [contributing](https://github.com/disizjay/farmer/blob/master/CONTRIBUTING.md)
