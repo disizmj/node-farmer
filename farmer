@@ -114,7 +114,7 @@ function farmer_sow() {
 	do
 		echo -e "\n Sowing seeds on host[$hn]"
 		ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn 'bash -s -x' < $canal_dir/${seed}_${pid}.sh &>${canal_dir}/${seed}_${hn}_${pid}.log &
-		pstree -pan ${pid} | grep "ssh\&BatchMode=yes\&${hn}" &>/dev/null
+		pstree -pan ${pid} | grep "${hn}" &>/dev/null
 		if [ $? -ne 0 ]; then
 			echo "SSH remote connect failed on host[$hn]. Please retry again."
 			continue
@@ -122,9 +122,10 @@ function farmer_sow() {
 	done < $soils_dir/$soil/hosts
 	echo ""
 	sleep 5;
-	while [[ `pstree -pan ${pid} 2>/dev/null | cut -d"," -f2 | cut -d" " -f1 | wc -l` -ge 6 ]];
+	while [[ `pstree -pan ${pid} 2>/dev/null | grep "BatchMode=yes" | wc -l` -ne 1 ]];
 	do
-		BACKGP=`pstree -pan ${pid} 2>/dev/null | cut -d"," -f2 | cut -d" " -f1 | wc -l`
+		pstree -pan ${pid}
+		BACKGP=`pstree -pan ${pid} 2>/dev/null | grep "BatchMode=yes" | wc -l`
 		echo "Info: Waitig on (${BACKGP}) active thread(s)"
 		sleep 10;
 	done
@@ -149,9 +150,9 @@ function farmer_sow() {
 function farmer_cleanup() {
 	echo -e "\nKill signal received"
 	echo "Initiating GC"
-	while [[ `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | cut -d"," -f2 | cut -d" " -f1 | wc -l` -gt 4 ]];
+	while [[ `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | grep "BatchMode=yes" | wc -l` -ne 0 ]];
 	do
-		kill -9 `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | cut -d"," -f2 | cut -d" " -f1 | tr '\n' ' '` 2>/dev/null 1>/dev/null
+		kill -9 `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | grep "BatchMode=yes" | cut -d"," -f2 | cut -d" " -f1 | tr '\n' ' '` 2>/dev/null 1>/dev/null
 		rm $canal_dir/${seed}_${pid}.sh
 	done
 	echo "Process cleanup completed"
