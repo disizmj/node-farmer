@@ -124,7 +124,6 @@ function farmer_sow() {
 	sleep 5;
 	while [[ `pstree -pan ${pid} 2>/dev/null | grep "BatchMode=yes" | wc -l` -ne 1 ]];
 	do
-		pstree -pan ${pid}
 		BACKGP=`pstree -pan ${pid} 2>/dev/null | grep "BatchMode=yes" | wc -l`
 		echo "Info: Waitig on (${BACKGP}) active thread(s)"
 		sleep 10;
