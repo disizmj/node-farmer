@@ -50,7 +50,7 @@ seed=$5
 soil=$7
 
 #functions
-function help() {
+help() {
 	echo -e "\nUsage: $0 [option] --user [username] --seed [seedname] --soil [soilname]"
 	echo -e "\nOptions"
 	echo -e "   info\t: Displays information about existing seeds and soils"
@@ -71,7 +71,7 @@ function help() {
 	echo -e "\nSee <https://disizjay.github.io/farmer/> for updates, bug reports, and answers"
 }
 
-function farmer_info() {
+farmer_info() {
 	echo ""
 	echo "Info: Farmer is verifying the quality of seeds and soils"
 	echo ""
@@ -106,7 +106,7 @@ function farmer_info() {
 	return $rc
 }
 
-function farmer_sow() {
+farmer_sow() {
 	echo ""
 	echo "Info: Farmer is deploying seeds in soils"
 	rm $canal_dir/${seed}_${pid}.sh &>/dev/null
@@ -154,7 +154,7 @@ function farmer_sow() {
 	echo -e "\nCheck logs[${canal_dir}/${seed}_*] for entire logs"
 }
 
-function farmer_cleanup() {
+farmer_cleanup() {
 	echo -e "\nKill signal received"
 	echo "Initiating GC"
 	while [[ `pstree -pan ${pid} 2>/dev/null | wc -l` -ne 4 ]];
@@ -166,7 +166,7 @@ function farmer_cleanup() {
 	exit 1
 }
 
-function farmer_harvest() {
+farmer_harvest() {
 	echo ""
 	#echo "Nothing to harvest right now. Feature unavailable in this build."
 	rm $canal_dir/${seed}_${pid}.sh &>/dev/null
@@ -174,7 +174,7 @@ function farmer_harvest() {
 }
 
 #start
-trap 'farmer_cleanup; exit 1' SIGHUP SIGINT SIGTERM
+trap farmer_cleanup SIGHUP SIGINT SIGTERM
 
 if [ $# -lt 1 ]; then
 	echo ""
