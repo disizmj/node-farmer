@@ -152,6 +152,7 @@ function farmer_cleanup() {
 	while [[ `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | cut -d"," -f2 | cut -d" " -f1 | wc -l` -gt 4 ]];
 	do
 		kill -9 `pstree -pan ${pid} 2>/dev/null | grep -v ${pid} | cut -d"," -f2 | cut -d" " -f1 | tr '\n' ' '` 2>/dev/null 1>/dev/null
+		rm $canal_dir/${seed}_${pid}.sh
 	done
 	echo "Process cleanup completed"
 	exit 1
