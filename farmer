@@ -84,10 +84,10 @@ farmer_info() {
 	echo "Verifying SSH and remote user"
 	while read hn;
 	do
-		status=$(ssh -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn echo ok 2>/dev/null)
+		status=$(ssh -n -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn echo ok 2>/dev/null)
 		if [[ $status == ok ]] ; then
 			echo "[$hn] SSH setup verified"
-			ssh -o StrictHostKeyChecking=no $hn "id -u $remote_user" &>/dev/null
+			ssh -n -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=5 $hn "id -u $remote_user" &>/dev/null
 			if [ $? -ne 0 ]; then
 				echo "[$hn] Remote user[$remote_user] do not exist"
 				rc=1
