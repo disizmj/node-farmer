@@ -37,7 +37,7 @@
 pid=$$
 whereami=`pwd`
 home=${whereami}
-cd ${home}; stat canal fruits soils seeds &>/dev/null; if [ $? -ne 0 ]; then echo -e "\nError: Required directories(canal, fruits, soils, seeds) are missing. Please make sure to clone most latest source"; exit 1; fi
+cd ${home}; stat canal fruits soils seeds &>/dev/null; if [ $? -ne 0 ]; then echo -e "\nError: Required directories(canal, fruits, soils, seeds) are missing. Please make sure to create required  directories in your current directory"; exit 1; fi
 umask 0027
 seconds=0
 canal_dir="${home}/canal";
@@ -52,24 +52,28 @@ soil=$7
 
 #functions
 help() {
-	echo -e "\nUsage: $0 [option] --user [username] --seed [seedname] --soil [soilname]"
-	echo -e "\nOptions"
+	echo -e "\nUsage: farmer [option] --user [username] --seed [seedname] --soil [soilname]"
+	echo -e "\n// Options //"
 	echo -e "   info\t: Displays information about existing seeds and soils"
 	echo -e "   sow\t: Start deployment. Requires additional parameters --user, --seed and --soil"
 	echo -e "   help\t: Show this help"
-	echo -e "\nAdditional Parameters"
+	echo -e "\n// Additional Parameters //"
 	echo -e "   --user : Username used to perform action on remote hosts"
 	echo -e "   --seed : Directory containing .plow files"
 	echo -e "   --soil : Directory containing host groups"
-	echo -e "\nExamples"
+	echo -e "\n// Examples //"
 	echo -e "   To dislay information about existing configuration"
-	echo -e "\t $0 info --user root --seed example-user-make --soil example-development"
+	echo -e "\t farmer info --user root --seed example-user-make --soil example-development"
+	echo ""
 	echo -e "   To run deployment"
-        echo -e "\t $0 sow --user root --seed example-user-make --soil example-development"
+        echo -e "\t farmer sow --user root --seed example-user-make --soil example-development"
+	echo ""
 	echo -e "   For help"
-	echo -e "\t $0 help"
+	echo -e "\t farmer help"
+	echo ""
 	echo -e "   It is always recommended to run 'info' before running 'sow'"
 	echo -e "\nSee <https://disizjay.github.io/farmer/> for updates, bug reports, and answers"
+	echo ""
 }
 
 farmer_info() {
