@@ -72,6 +72,7 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 08/19/2017 : (v1.0.1) Background process manager
 08/20/2017 : (v1.0.2) GC implementation and improved error handling
 08/21/2017 : (v1.0.3) Minor bug fixes
+08/23/2017 : (v1.0.4) Fix for SSH broken pipe
 ```
 ## How to contibute ? 
 Please see [contributing](https://github.com/disizjay/farmer/blob/master/CONTRIBUTING.md)
