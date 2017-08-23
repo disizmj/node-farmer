@@ -1,0 +1,13 @@
+{
+  "name": "farmer",
+  "description": "A lightweight automation tool built for Linux machines",
+  "version": "1.0.3",
+  "homepage": "https://disizjay.github.io/farmer/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/disizjay/farmer.git"
+  },
+  "bin": "bash farmer",
+  "author": "MANIKUMAR JUTTUKONDA <manikumar.juttukonda@gmail.com> (http://bit.ly/disizjay)",
+  "license": "MIT"
+}
