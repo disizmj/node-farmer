@@ -1,7 +1,7 @@
 # A lightweight automation tool built for [Linux](https://en.wikipedia.org/wiki/Linux) machines
 ### No client/agent installation | Pure [BASH](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) over [SSH](https://en.wikipedia.org/wiki/Secure_Shell) | PLUG 'N' PLAY :rocket:
 
-## Current Build: v1.0.3
+## Current Build: v1.0.4
 
 ## Workflow:
 ```
