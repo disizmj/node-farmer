@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # MIT License
 #
@@ -177,6 +177,16 @@ farmer_harvest() {
 
 #start
 trap farmer_cleanup SIGHUP SIGINT SIGTERM
+
+if [ -n $BASH ]; then
+	echo ""
+	echo "Check BASH: [SUCCESS]"
+else
+	echo ""
+	echo "Check BASH: [FAILED]"
+	echo "Error #99: BASH required to run farmer"
+	exit 1
+fi
 
 if [ $# -lt 1 ]; then
 	echo ""
