@@ -35,35 +35,33 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 ```
   Reference('how-to') [link](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id) [Credits: [Ramesh Natarajan](http://www.thegeekstuff.com/about/)]
 
-## Download & run instructions:
+## Download & install instructions:
 ```
-$ git clone https://github.com/disizjay/farmer.git
-$ cd farmer
-$ ./farmer help
+$ npm install node-farmer
 ```
 ## Usage instructions:
 ```
-Usage: ./farmer [option] --user [username] --seed [seedname] --soil [soilname]
+Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 
-Options
+// Options //
    info : Displays information about existing seeds and soils
    sow  : Start deployment. Requires additional parameters --user, --seed and --soil
    help : Show this help
 
-Additional Parameters
+// Additional Parameters //
    --user : Username used to perform action on remote hosts
    --seed : Directory containing .plow files
    --soil : Directory containing host groups
 
-Examples
+// Examples //
    To dislay information about existing configuration
-         $ ./farmer info --user root --seed example-user-make --soil example-development
+         $ farmer info --user root --seed example-user-make --soil example-development
 
    To run deployment
-         $ ./farmer sow --user root --seed example-user-make --soil example-development
+         $ farmer sow --user root --seed example-user-make --soil example-development
 
    For help
-         $ ./farmer help
+         $ farmer help
 
    It is always recommended to run 'info' before running 'sow'
 ```
