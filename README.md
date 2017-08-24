@@ -32,12 +32,15 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 ### Download & install instructions:
 with npm
 ```
-$ npm -g install node-farmer; cp -r /usr/lib/node_modules/node-farmer/examples/* .;
+$ npm -g install node-farmer
+$ cp -r /usr/lib/node_modules/node-farmer/examples/* .
 $ farmer help
 ```
 (or) without npm
 ```
-$ curl https://raw.githubusercontent.com/disizjay/node-farmer/master/farmer > /usr/bin/farmer; chmod +x /usr/bin/farmer; mkdir canal fruits seeds soils;
+$ curl https://raw.githubusercontent.com/disizjay/node-farmer/master/farmer > /usr/bin/farmer
+$ chmod +x /usr/bin/farmer
+$ mkdir canal fruits seeds soils
 $ farmer help
 ```
 
