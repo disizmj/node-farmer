@@ -62,9 +62,7 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 ```
 
 ### Examples:
-```
 See [examples](https://github.com/disizjay/node-farmer/tree/master/examples)
-```
 
 ### How to contibute ? 
 See [contributing](https://github.com/disizjay/node-farmer/blob/master/CONTRIBUTING.md)
