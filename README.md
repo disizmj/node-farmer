@@ -64,7 +64,7 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
    It is always recommended to run 'info' before running 'sow'
 ```
 ## How to contibute ? 
-Please see [contributing](https://github.com/disizjay/farmer/blob/master/CONTRIBUTING.md)
+Please see [contributing](https://github.com/disizjay/node-farmer/blob/master/CONTRIBUTING.md)
 
 ## Issues ?
-Please submit issues [here](https://github.com/disizjay/farmer/issues/new)
+Please submit issues [here](https://github.com/disizjay/node-farmer/issues/new)
