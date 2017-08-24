@@ -29,12 +29,6 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 **Fruit and Harvest functionalities aren't available in this release. Upcoming releases will support these functionalities
 ```
 
-### Pre-requisites:
-```
- *Required passwordless SSH logon setup between local and remote servers
-```
-  Reference('how-to') [link](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id) [Credits: [Ramesh Natarajan](http://www.thegeekstuff.com/about/)]
-
 ### Download & install instructions:
 ```
 $ npm install node-farmer
@@ -67,8 +61,12 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
    It is always recommended to run 'info' before running 'sow'
 ```
 
+### Examples:
+```
+See [examples](https://github.com/disizjay/node-farmer/tree/master/examples)
+
 ### How to contibute ? 
-Please see [contributing](https://github.com/disizjay/node-farmer/blob/master/CONTRIBUTING.md)
+See [contributing](https://github.com/disizjay/node-farmer/blob/master/CONTRIBUTING.md)
 
 ### Issues ?
 Please submit issues [here](https://github.com/disizjay/node-farmer/issues/new)

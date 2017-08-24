@@ -7,5 +7,5 @@
 08/20/2017 : (v1.0.2) GC implementation and improved error handling
 08/21/2017 : (v1.0.3) Minor bug fixes
 08/22/2017 : (v1.0.4) Fix for SSH broken pipe
-08/23/2017 : (v1.1.0) Stable npm release
+08/23/2017 : (v1.1.1) Stable npm release
 ```
