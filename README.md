@@ -3,7 +3,7 @@
 
 ### Workflow:
 ```
-Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recovery)
+Seed(Input) > Sow(Deploy) > Crop(Success) > Harvest(Snapshot) > Fruit(Recovery)
 ```
 
 ### Terminology:

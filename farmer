@@ -70,10 +70,10 @@ farmer_info() {
 	echo ""
 	echo "Info: Farmer is verifying the quality of seeds and soils"
 	echo ""
-        echo "  Soil: $soil"
-	echo "  (`cat $soils_dir/$soil/hosts 2>/dev/null | wc -l`) number of soils found"
-	echo "  Seed: $seed"
-	echo "  (`find $seeds_dir/$seed -type f 2>/dev/null | wc -l`) number of seeds found"
+        echo "  Soil check: $soil"
+	echo "  (`cat $soils_dir/$soil/hosts 2>/dev/null | wc -l`) soils found"
+	echo "  Seed check: $seed"
+	echo "  (`find $seeds_dir/$seed -type f 2>/dev/null | wc -l`) seeds found"
 	echo ""
 	echo "Verifying SSH and remote user"
 	while read hn;
@@ -105,7 +105,7 @@ farmer_sow() {
 	echo ""
 	echo "Info: Farmer is deploying seeds in soils"
 	rm $canal_dir/${seed}_${pid}.sh &>/dev/null
-	echo "#!/bin/sh -e" >> $canal_dir/${seed}_${pid}.sh
+	echo "#!/usr/bin/env bash -e" >> $canal_dir/${seed}_${pid}.sh
 	for i in `find $seeds_dir/$seed -type f | sort`
 	do
 	echo "" >> $canal_dir/${seed}_${pid}.sh
@@ -182,7 +182,7 @@ echo -e '
 
 
 Visit <https://disizjay.github.io/node-farmer/> for more details
-		// Current Build: v1.1.4 //
+		// Current Build: v1.1.5 //
 '
 
 if [ -n $BASH ]; then
