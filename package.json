@@ -1,11 +1,11 @@
 {
   "name": "node-farmer",
   "description": "A lightweight automation tool built for Linux machines",
-  "version": "1.0.5",
-  "homepage": "https://disizjay.github.io/farmer/",
+  "version": "1.0.6",
+  "homepage": "https://disizjay.github.io/node-farmer/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/disizjay/farmer.git"
+    "url": "https://github.com/disizjay/node-farmer.git"
   },
   "bin": {
     "farmer": "farmer"
