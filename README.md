@@ -38,7 +38,7 @@ $ farmer help
 ```
 (or) without npm
 ```
-$ curl https://raw.githubusercontent.com/disizjay/node-farmer/master/farmer > /usr/bin/farmer; chmod +x /usr/bin/farmer.sh
+$ curl https://raw.githubusercontent.com/disizjay/node-farmer/master/farmer > /usr/bin/farmer; chmod +x /usr/bin/farmer
 $ mkdir canal fruits seeds soils
 $ farmer help
 ```
