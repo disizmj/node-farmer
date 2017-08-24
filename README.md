@@ -32,8 +32,9 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 ### Download & install instructions:
 ```
 $ npm install node-farmer
-
+```
 (or) without npm
+```
 $ curl https://raw.githubusercontent.com/disizjay/node-farmer/master/farmer > /usr/bin/farmer; chmod +x /usr/bin/farmer.sh
 ```
 
