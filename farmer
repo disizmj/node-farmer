@@ -30,7 +30,7 @@
 pid=$$
 whereami=`pwd`
 home=${whereami}
-#cd ${home}; stat canal fruits soils seeds &>/dev/null; if [ $? -ne 0 ]; then echo -e "Error: Required directories(canal, fruits, soils, seeds) are missing. Please make sure to create required  directories in your current directory"; exit 1; fi
+cd ${home}; stat canal fruits soils seeds &>/dev/null; if [ $? -ne 0 ]; then echo -e "Error: Required directories(canal, fruits, soils, seeds) are missing. Please make sure to create required  directories in your current directory"; exit 1; fi
 umask 0027
 seconds=0
 canal_dir="${home}/canal";
@@ -63,8 +63,7 @@ help() {
 	echo -e "\t farmer help"
 	echo ""
 	echo -e "   It is always recommended to run 'info' before running 'sow'"
-	echo -e "\nSee <https://disizjay.github.io/farmer/> for updates, bug reports, and answers"
-	echo ""
+	echo -e "\nSee <https://disizjay.github.io/node-farmer/> for examples, updates and bug reports"
 }
 
 farmer_info() {

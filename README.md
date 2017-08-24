@@ -1,11 +1,12 @@
 # A lightweight automation tool built for [Linux](https://en.wikipedia.org/wiki/Linux) machines
-### No client/agent installation | Pure [BASH](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) over [SSH](https://en.wikipedia.org/wiki/Secure_Shell) | PLUG 'N' PLAY :rocket:
+## No client/agent installation | Pure [BASH](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) over [SSH](https://en.wikipedia.org/wiki/Secure_Shell) | PLUG 'N' PLAY :rocket:
 
-## Workflow:
+### Workflow:
 ```
 Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recovery)
 ```
-## Terminology:
+
+### Terminology:
 ```
  Seed	: The input/instructions that runs on remote host/server
 
@@ -27,17 +28,19 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 
 **Harvest and Fruit functionalities aren't available in this release. Upcoming releases will support these functionalities.
 ```
-## Pre-requisites:
+
+### Pre-requisites:
 ```
  *Required passwordless SSH logon setup between local and remote servers
 ```
   Reference('how-to') [link](http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id) [Credits: [Ramesh Natarajan](http://www.thegeekstuff.com/about/)]
 
-## Download & install instructions:
+### Download & install instructions:
 ```
 $ npm install node-farmer
 ```
-## Usage instructions:
+
+### Usage instructions:
 ```
 Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 
@@ -63,8 +66,9 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 
    It is always recommended to run 'info' before running 'sow'
 ```
-## How to contibute ? 
+
+### How to contibute ? 
 Please see [contributing](https://github.com/disizjay/node-farmer/blob/master/CONTRIBUTING.md)
 
-## Issues ?
+### Issues ?
 Please submit issues [here](https://github.com/disizjay/node-farmer/issues/new)
