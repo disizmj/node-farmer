@@ -12,19 +12,19 @@ Seed(Input) > Sow(Deploy) > Crop(Success) > Harvest(Snapshot) > Fruit(Recovery)
 
  Sow	: Sowing seeds in soil, is running input/instructions on remote host(s)
 
- Crop	: Crop is grown, indicates an successful deployment
+ Crop	: Crop is grown, indicates a successful deployment
 
- Harvest: Harvesting crop, is making a snapshot of successful deployment
+ Harvest: Harvesting crop, is making a snapshot of successful deployment which can be used later in case of recovery
 
- Fruit**: Snapshot is saved as fruit in compressed format which can be used for rollback/recovery
+ Fruit**: Snapshot is saved as fruit in compressed format which can be used for recovery
 
  Plow	: A scripting format used to build input, uses extension .plow
-	  See few examples in (../seeds) directory
+	  See 'examples/seeds' in https://github.com/disizjay/node-farmer/tree/master/examples
 
  Soil	: A host or group of hosts where input/instructions are executed
-	  See few examples in (../soils) directory
+	  See 'examples/soils' in https://github.com/disizjay/node-farmer/tree/master/examples
 
- Canal	: A waterway to convey water for irrigation, temporary directory to hold any staging files as needed
+ Canal	: A waterway to convey water for irrigation, temporary directory which holds staging files and logs
 
 **Fruit and Harvest functionalities aren't available in this release. Upcoming releases will support these functionalities
 ```
