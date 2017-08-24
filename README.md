@@ -30,6 +30,7 @@ Seed(Input) >> Sow(Deploy) >> Crop(Success) >> Harvest(Snapshot) >> Fruit(Recove
 ```
 
 ### Download & install instructions:
+with npm
 ```
 $ npm install node-farmer
 ```
