@@ -46,7 +46,7 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 // Additional Parameters //
    --user : Username used to perform action on remote hosts
    --seed : Directory containing .plow files
-   --soil : Directory containing host groups
+   --soil : Directory containing hosts
 
 // Examples //
    To dislay information about existing configuration
