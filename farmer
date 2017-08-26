@@ -224,7 +224,7 @@ echo -e '
 
 
 Visit <https://disizjay.github.io/node-farmer/> for more details
-		// Current Build: v1.2.3 //
+		// Current Build: v1.2.5 //
 '
 
 if [ -n $BASH ]; then

@@ -38,6 +38,13 @@ upgrade with npm (if already installed an older version)
 ```
 $ npm -g update node-farmer
 ```
+install without npm
+```
+$ git clone https://github.com/disizjay/node-farmer.git
+$ cd node-farmer
+$ cp -r examples/* .
+$ ./farmer help
+```
 
 ### Usage instructions:
 ```

@@ -24,14 +24,11 @@
     "big data",
     "hadoop"
   ],
-  "version": "1.2.3",
+  "version": "1.2.5",
   "homepage": "https://disizjay.github.io/node-farmer/",
   "repository": {
     "type": "git",
     "url": "https://github.com/disizjay/node-farmer.git"
-  },
-  "publishConfig": {
-    "registry": "https://api.bintray.com/npm/disizjay/linux-tools"
   },
   "bin": {
     "farmer": "farmer"
