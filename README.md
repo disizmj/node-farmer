@@ -46,6 +46,22 @@ $ cp -r examples/* .
 $ ./farmer help
 ```
 
+### Getting started
+Step 1: Download and install node-farmer from above install instructions
+
+Step 2: Go to 'seeds' directory and create a new directory and then create .plow file(s). Plow files will contain remote commands you intend to run on remote hosts
+ 	.plow syntax: 
+		arg::: - to specify variables (example - arg:::userid="joblo"), variable(like $userid) can be used in any of the commands within a .plow file
+		command::: - to specify commands (example - command:::yum install httpd) 
+	arg::: and command::: can be in any order in .plow file but should be seperated by '\n' i.e., One arg::: per line, One command::: per line
+
+Step 3: Go to 'soils' directory, create a new directory and then create 'hosts' file with list of remote hostnames or IP addresses 
+	Upon running deployment all the commands given in .plow files will be executed on all remote hosts in parallel
+	Make sure to setup passwrordless SSH on the host running node-farmer to all the remote hosts
+
+Step 4: You should be all set at this point. 
+	Read below usage instructions for execution syntax
+
 ### Usage instructions:
 ```
 Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
@@ -60,7 +76,7 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
    --user : Username used to perform action on remote hosts
    --seed : Directory containing .plow files
    --soil : Directory containing host groups
-   --fruit: Directory containing previously saved snapshots
+   --fruit: Directory containing previously saved snapshots (only used with 'feed' option)
 
 // Examples //
    Pre-validates provided inputs(seeds/soils)
