@@ -10,21 +10,17 @@ Seed(Input) > Sow(Deploy) > Crop(Success) > Harvest(Snapshot) > Fruit(Recovery)
 ```
  Seed	: The input/instructions that runs on remote host/server
 
- Sow	: Sowing seeds in soil, is running input/instructions on remote host(s)
+ Plow   : Scripting format used to build input, uses extension .plow
 
- Crop	: Crop is grown, indicates a successful deployment
+ Soil   : List of remote hosts where input/instructions are executed
 
- Harvest: Harvesting crop, is making a snapshot of successful deployment which can be used later in case of recovery
+ Sow	: Run input/instructions on remote host(s)
 
- Fruit	: Snapshot is saved as fruit in compressed format which can be used for recovery
+ Harvest: Configuration files(seeds & soils) snapshot of a successful deployment which can be reused in future
 
- Plow	: A scripting format used to build input, uses extension .plow
-	  See 'examples/seeds' in https://github.com/disizjay/node-farmer/tree/master/examples
+ Fruit	: Snapshot will be archived which can be reused in future
 
- Soil	: A host or group of hosts where input/instructions are executed
-	  See 'examples/soils' in https://github.com/disizjay/node-farmer/tree/master/examples
-
- Canal	: A waterway to convey water for irrigation, temporary directory which holds staging files and logs
+ Canal	: Directory to store runtime temporary files and logs
 ```
 
 ### Download & install instructions:
@@ -56,11 +52,15 @@ Step 2: Go to 'seeds' directory and create a new directory and then create .plow
 		command::: - to specify commands (example - command:::yum install httpd) 
 	arg::: and command::: can be in any order in .plow file but should be seperated by '\n' i.e., One arg::: per line, One command::: per line
 
+	See 'examples/seeds' in https://github.com/disizjay/node-farmer/tree/master/examples
+
 Step 3: Go to 'soils' directory, create a new directory and then create 'hosts' file with list of remote hostnames or IP addresses 
 	Upon running deployment all the commands given in .plow files will be executed on all remote hosts in parallel
 	Make sure to setup passwrordless SSH on the host running node-farmer to all the remote hosts
 
-Step 4: You should be all set at this point. 
+	See 'examples/soils' in https://github.com/disizjay/node-farmer/tree/master/examples
+
+Step 4: You should be all set at this point
 	Read below usage instructions for execution syntax
 ```
 
