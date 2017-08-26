@@ -23,6 +23,8 @@ Fruit(Snapshot) > Sow(Deploy)
 
  Fruit	: Snapshot/archive of configuration files(seeds & soils) from a successful deployment, which can be reused in future
 
+ Feed   : Re-deploy using an existing snapshot
+
  Canal	: Directory to store runtime temporary files and logs
 ```
 
