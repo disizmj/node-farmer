@@ -16,7 +16,7 @@ Seed(Input) > Sow(Deploy) > Crop(Success) > Harvest(Snapshot) > Fruit(Recovery)
 
  Harvest: Harvesting crop, is making a snapshot of successful deployment which can be used later in case of recovery
 
- Fruit**: Snapshot is saved as fruit in compressed format which can be used for recovery
+ Fruit	: Snapshot is saved as fruit in compressed format which can be used for recovery
 
  Plow	: A scripting format used to build input, uses extension .plow
 	  See 'examples/seeds' in https://github.com/disizjay/node-farmer/tree/master/examples
@@ -25,8 +25,6 @@ Seed(Input) > Sow(Deploy) > Crop(Success) > Harvest(Snapshot) > Fruit(Recovery)
 	  See 'examples/soils' in https://github.com/disizjay/node-farmer/tree/master/examples
 
  Canal	: A waterway to convey water for irrigation, temporary directory which holds staging files and logs
-
-**Fruit and Harvest functionalities aren't available in this release. Upcoming releases will support these functionalities
 ```
 
 ### Download & install instructions:
@@ -36,16 +34,9 @@ $ npm -g install node-farmer
 $ cp -r /usr/lib/node_modules/node-farmer/examples/* .
 $ farmer help
 ```
-upgrade with npm(if already installed)
+upgrade with npm (if already installed an older version)
 ```
 $ npm -g update node-farmer
-```
-(or) without npm
-```
-$ curl https://raw.githubusercontent.com/disizjay/node-farmer/master/farmer > /usr/bin/farmer
-$ chmod +x /usr/bin/farmer
-$ mkdir canal fruits seeds soils
-$ farmer help
 ```
 
 ### Usage instructions:
@@ -55,24 +46,30 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 // Options //
    info : Displays information about existing seeds and soils
    sow  : Start deployment. Requires additional parameters --user, --seed and --soil
+   feed : Re-deploy from a saved fruit/snapshot
    help : Show this help
 
 // Additional Parameters //
    --user : Username used to perform action on remote hosts
    --seed : Directory containing .plow files
-   --soil : Directory containing hosts
+   --soil : Directory containing host groups
+   --fruit: Directory containing previously saved snapshots
 
 // Examples //
-   To dislay information about existing configuration
-         $ farmer info --user root --seed example-user-make --soil example-development
+   Pre-validates provided inputs(seeds/soils)
+        $ farmer info --user root --seed example-user-make --soil example-development
 
    To run deployment
-         $ farmer sow --user root --seed example-user-make --soil example-development
+        $ farmer sow --user root --seed example-user-make --soil example-development
+
+   To re-deploy from a snapshot
+        $ farmer feed --fruit fruit-example-user-make-08-25-17.tar.gz
 
    For help
-         $ farmer help
+        $ farmer help
 
    It is always recommended to run 'info' before running 'sow'
+
 ```
 
 ### Examples:

@@ -24,7 +24,7 @@
     "big data",
     "hadoop"
     ],
-  "version": "1.1.5",
+  "version": "1.1.6",
   "homepage": "https://disizjay.github.io/node-farmer/",
   "repository": {
     "type": "git",
@@ -37,5 +37,5 @@
     "farmer": "farmer"
   },
   "author": "MANIKUMAR JUTTUKONDA <manikumar.juttukonda@gmail.com> (http://bit.ly/disizjay)",
-  "license": "MIT"
+  "license": "(MIT)"
 }

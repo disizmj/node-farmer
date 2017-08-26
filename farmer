@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # MIT License
 #
@@ -33,6 +33,7 @@ home=${whereami}
 cd ${home}; stat canal fruits soils seeds &>/dev/null; if [ $? -ne 0 ]; then echo -e "Error: Required directories(canal, fruits, soils, seeds) are missing. Please make sure to create required  directories in your current directory"; exit 1; fi
 umask 0027
 seconds=0
+DTE=`date +"%m-%d-%Y"`
 canal_dir="${home}/canal";
 fruits_dir="${home}/fruits";
 soils_dir="${home}/soils";
@@ -49,16 +50,20 @@ help() {
 	echo -e "\n// Options //"
 	echo -e "   info\t: Displays information about existing seeds and soils"
 	echo -e "   sow\t: Start deployment. Requires additional parameters --user, --seed and --soil"
+	echo -e "   feed\t: Re-deploy from a saved fruit/snapshot"
 	echo -e "   help\t: Show this help"
 	echo -e "\n// Additional Parameters //"
 	echo -e "   --user : Username used to perform action on remote hosts"
 	echo -e "   --seed : Directory containing .plow files"
 	echo -e "   --soil : Directory containing host groups"
+	echo -e "   --fruit: Directory containing previously saved snapshots"
 	echo -e "\n// Examples //"
-	echo -e "   To dislay information about existing configuration"
+	echo -e "   Pre-validates provided inputs(seeds/soils)"
 	echo -e "\t farmer info --user root --seed example-user-make --soil example-development"
 	echo -e "   To run deployment"
         echo -e "\t farmer sow --user root --seed example-user-make --soil example-development"
+	echo -e "   To re-deploy from a snapshot"
+	echo -e "\t farmer feed --fruit fruit-example-user-make-08-25-17.tar.gz"
 	echo -e "   For help"
 	echo -e "\t farmer help"
 	echo ""
@@ -105,7 +110,7 @@ farmer_sow() {
 	echo ""
 	echo "Info: Farmer is deploying seeds in soils"
 	rm $canal_dir/${seed}_${pid}.sh &>/dev/null
-	echo "#!/usr/bin/env bash -e" >> $canal_dir/${seed}_${pid}.sh
+	echo "#!/bin/bash -e" >> $canal_dir/${seed}_${pid}.sh
 	for i in `find $seeds_dir/$seed -type f | sort`
 	do
 	echo "" >> $canal_dir/${seed}_${pid}.sh
@@ -146,8 +151,52 @@ farmer_sow() {
 		echo -e " (${FAILED}) failed"
 		echo -e "\n Commands: Total (${TOTAL}) Succeeded (${SUCCESS}) Failed (${FAILED})"
 		echo -e "------------------------------------------------"
+		if [[ $FAILED -ne 0 ]]; then SOW_STAT=1; fi
 	done
 	echo -e "\nCheck logs[${canal_dir}/${seed}_*] for entire logs"
+	if [[ $SOW_STAT -eq 1 ]]; then
+		echo -e "\nError: Aborting snapshot process due to command failures"
+		rm $canal_dir/${seed}_${pid}.sh &>/dev/null
+		exit 1
+	fi
+}
+
+farmer_harvest() {
+        echo ""
+	echo "Harvesting crop and saving fruit"
+	echo "Info: Creating a snapshot of successful deployment"
+	rm -rf $canal_dir/fruit-${seed}-${DTE}-${pid}
+	mkdir -p $canal_dir/fruit-${seed}-${DTE}-${pid}
+	local_fruit="$canal_dir/fruit-${seed}-${DTE}-${pid}";
+	echo -n "$remote_user" > $local_fruit/remote_user
+	cat $soils_dir/$soil/hosts > $local_fruit/hosts
+	cat $canal_dir/${seed}_${pid}.sh > $local_fruit/seed-preserve.sh
+	if [ $? -ne 0 ]; then
+		echo -e "\nError: Snapshot make failed"
+		rm -rf $canal_dir/fruit-${seed}-${DTE}-${pid}
+		exit 1
+	else
+		echo -e "\nInfo: Sanpshot made successfully"
+		echo -e "\nSaving fruit"
+		echo -e "Info: Preserving snapshot for later use"
+		cd $fruits_dir/ && tar -zcvf fruit-${seed}-${DTE}-${pid}.tar.gz $local_fruit/ &>/dev/null
+		if [ $? -ne 0 ]; then
+			echo "Error: Snapshot preserve failed"
+			rm -rf $canal_dir/fruit-${seed}-${DTE}-${pid}
+			exit 1
+		else
+			echo "Fruit saved: $fruits_dir/fruit-${seed}-${DTE}-${pid}.tar.gz"
+			echo -e "\nInfo: Snapshot successfully saved"
+			rm -rf $canal_dir/fruit-${seed}-${DTE}-${pid}
+			rm $canal_dir/${seed}_${pid}.sh &>/dev/null
+		fi
+	fi
+}
+
+farmer_feed() {
+	echo ""
+	echo "We are still working on this feature. Stay tuned"
+	echo ""
 }
 
 farmer_cleanup() {
@@ -160,13 +209,6 @@ farmer_cleanup() {
 	done
 	echo "Process cleanup completed"
 	exit 1
-}
-
-farmer_harvest() {
-	echo ""
-	#echo "Nothing to harvest right now. Feature unavailable in this build."
-	rm $canal_dir/${seed}_${pid}.sh &>/dev/null
-	#echo "Thank you!"
 }
 
 #start
@@ -182,15 +224,15 @@ echo -e '
 
 
 Visit <https://disizjay.github.io/node-farmer/> for more details
-		// Current Build: v1.1.5 //
+		// Current Build: v1.1.6 //
 '
 
 if [ -n $BASH ]; then
 	echo ""
-	echo "Info: Check BASH: [SUCCESS]"
+	echo "Info: BASH check [OK]"
 else
 	echo ""
-	echo "Info: Check BASH: [FAILED]"
+	echo "Info: BASH check [FAILED]"
 	echo "Error #99: BASH required to run farmer"
 	exit 1
 fi
@@ -269,12 +311,13 @@ case $1 in
 			#else
 			#	echo "Info: Integrity check success"
 				farmer_sow
-				if [ $? -eq 0 ]; then
-					farmer_harvest
-				else
-					echo "Errors occured while sowing soil, deploying seed"
-					exit 1
-				fi
+				farmer_harvest
+				#if [ $? -eq 0 ]; then
+				#	farmer_harvest
+				#else
+				#	echo "Errors occured while sowing soil, deploying seed"
+				#	exit 1
+				#fi
                         #fi
 		fi
 		;;
@@ -331,7 +374,7 @@ case $1 in
                                         exit 1;
                                         ;;
                         esac
-                        farmer_info
+			farmer_info
 			if [[ $rc -eq 1 ]]; then
 				echo "Error: Integrity check failed"
 				echo "Good bye!"
@@ -340,6 +383,34 @@ case $1 in
                                 echo "Info: Integrity check success"
 			fi
                 fi
+		;;
+
+	feed )
+		if [ $# -ne 3 ]; then
+                        echo ""
+                        echo "Error #123: Incorrect usage for 'feed' operation"
+                        help
+                        exit 1;	
+		else
+                        case $2 in
+                                --fruit )
+                                        fruit=$3
+					if [[ ! -f "${fruits_dir}/${fruit}" ]]
+                                        then
+                                                echo ""
+                                                echo "Error #121: Fruit '${fruit}' do not exist"
+                                                exit 1;
+                                        fi
+                                        ;;
+                                *)
+                                        echo ""
+                                        echo "Error #123: Incorrect usage for 'feed' operation"
+                                        help
+                                        exit 1;
+                                        ;;
+                        esac
+			farmer_feed
+		fi
 		;;
 
 	help )
