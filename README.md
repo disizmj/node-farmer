@@ -19,7 +19,7 @@ Fruit(Snapshot) > Sow(Deploy)
 
  Soil   : List of remote hosts where input/instructions are executed
 
- Sow	: Runs input/instructions on remote host(s)
+ Sow	: Deploy input/instructions on remote host(s)
 
  Fruit	: Snapshot/archive of configuration files(seeds & soils) from a successful deployment, which can be reused in future
 
