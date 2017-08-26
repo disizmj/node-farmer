@@ -23,8 +23,8 @@
     "code deployment",
     "big data",
     "hadoop"
-    ],
-  "version": "1.1.7",
+  ],
+  "version": "1.1.8",
   "homepage": "https://disizjay.github.io/node-farmer/",
   "repository": {
     "type": "git",
