@@ -10,15 +10,13 @@ Seed(Input) > Sow(Deploy) > Crop(Success) > Harvest(Snapshot) > Fruit(Recovery)
 ```
  Seed	: The input/instructions that runs on remote host/server
 
- Plow   : Scripting format used to build input, uses extension .plow
+ Plow   : Scripting format used to build input/seed, uses extension .plow
 
  Soil   : List of remote hosts where input/instructions are executed
 
- Sow	: Run input/instructions on remote host(s)
+ Sow	: Runs input/instructions on remote host(s)
 
- Harvest: Configuration files(seeds & soils) snapshot of a successful deployment which can be reused in future
-
- Fruit	: Snapshot will be archived which can be reused in future
+ Fruit	: Snapshot/archive of configuration files(seeds & soils) from a successful deployment, which can be reused in future
 
  Canal	: Directory to store runtime temporary files and logs
 ```
