@@ -1,3 +1,0 @@
-args:::keys_dir="/root/.ssh"
-
-command:::echo "\n" | ssh-keygen -t rsa -N '' -f $keys_dir
