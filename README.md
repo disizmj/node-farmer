@@ -47,6 +47,7 @@ $ ./farmer help
 ```
 
 ### Getting started
+```
 Step 1: Download and install node-farmer from above install instructions
 
 Step 2: Go to 'seeds' directory and create a new directory and then create .plow file(s). Plow files will contain remote commands you intend to run on remote hosts
@@ -61,6 +62,7 @@ Step 3: Go to 'soils' directory, create a new directory and then create 'hosts' 
 
 Step 4: You should be all set at this point. 
 	Read below usage instructions for execution syntax
+```
 
 ### Usage instructions:
 ```
