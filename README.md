@@ -21,7 +21,7 @@ Fruit(Snapshot) > Sow(Deploy)
 
  Sow	: Deploy input/instructions on remote host(s)
 
- Fruit	: Snapshot/archive of configuration files(seeds & soils) from a successful deployment, which can be reused in future
+ Fruit	: Snapshot/archive of configuration files(seeds & soils) from a successful deployment, can be reused in future
 
  Feed   : Re-deploy using an existing snapshot
 
