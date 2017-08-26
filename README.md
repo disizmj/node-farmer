@@ -2,8 +2,13 @@
 ## No client/agent installation | Pure [BASH](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) over [SSH](https://en.wikipedia.org/wiki/Secure_Shell) | PLUG 'N' PLAY :rocket:
 
 ### Workflow:
+Standard workflow
 ```
-Seed(Input) > Sow(Deploy) > Crop(Success) > Harvest(Snapshot) > Fruit(Recovery)
+Seed(Input) > Sow(Deploy) > Fruit(Snapshot)
+```
+Reusability workflow
+```
+Fruit(Snapshot) > Sow(Deploy)
 ```
 
 ### Terminology:
