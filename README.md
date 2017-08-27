@@ -28,6 +28,16 @@ Fruit(Snapshot) > Sow(Deploy)
  Canal	: Directory to store runtime temporary files and logs
 ```
 
+### Pre-requisites
+```
+For Redhat/CentOS
+$ curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
+$ yum install -y nodejs && yum install -y gcc-c++ make
+
+For Ubuntu
+$ apt-get install npm
+```
+
 ### Download & install instructions:
 install with npm
 ```
