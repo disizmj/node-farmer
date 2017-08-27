@@ -26,9 +26,13 @@
     "cloud",
     "cloud management",
     "cloud automation",
-    "cloud services"
+    "cloud services",
+    "cloud services management",
+    "cloud infrastructure management",
+    "it automation",
+    "linux server management"
   ],
-  "version": "1.2.7",
+  "version": "1.3.0",
   "homepage": "https://disizjay.github.io/node-farmer/",
   "repository": {
     "type": "git",

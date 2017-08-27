@@ -33,9 +33,11 @@ Fruit(Snapshot) > Sow(Deploy)
 For Redhat/CentOS
 $ curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
 $ yum install -y nodejs && yum install -y gcc-c++ make
+$ yum install -y psmisc
 
 For Ubuntu
-$ apt-get install npm
+$ apt-get install -y npm
+$ apt-get install -y psmisc
 ```
 
 ### Download & install instructions:
