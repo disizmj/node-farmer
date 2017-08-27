@@ -22,9 +22,13 @@
     "infrastructure management",
     "code deployment",
     "big data",
-    "hadoop"
+    "hadoop",
+    "cloud",
+    "cloud management",
+    "cloud automation",
+    "cloud services"
   ],
-  "version": "1.2.5",
+  "version": "1.2.6",
   "homepage": "https://disizjay.github.io/node-farmer/",
   "repository": {
     "type": "git",

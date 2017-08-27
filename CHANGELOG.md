@@ -9,5 +9,6 @@
 08/22/2017 : (v1.0.4) Fix for SSH broken pipe
 08/23/2017 : (v1.1.4) Stable npm release
 08/24/2017 : (v1.1.5) Fix to invoke BASH on remote SSH
-08/26/2017 : (v1.2.5) Added snapshot feature
+08/25/2017 : (v1.2.5) Added snapshot feature
+08/26/2017 : (v1.2.6) Added tags
 ```
