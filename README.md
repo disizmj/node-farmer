@@ -1,7 +1,7 @@
 # A lightweight automation tool built for [Linux](https://en.wikipedia.org/wiki/Linux) machines
 ## No client/agent installation | Pure [BASH](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) over [SSH](https://en.wikipedia.org/wiki/Secure_Shell) | PLUG 'N' PLAY :rocket:
 
-## Stable release 1.3.0 | See [stats](http://npm-stats.org/#/node-farmer)
+## Stable release 1.3.0 | View [Stats](http://npm-stats.org/#/node-farmer)
 
 ### Workflow:
 Standard workflow
