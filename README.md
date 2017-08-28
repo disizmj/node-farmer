@@ -1,7 +1,7 @@
 # A lightweight automation tool built for Linux machines
 ## No client/agent installation | Pure BASH over SSH | PLUG 'N' PLAY :rocket:
 
-## Stable release [1.3.0](http://npm-stats.org/#/node-farmer)
+## Stable release [2.0.0](http://npm-stats.org/#/node-farmer)
 
 ### Workflow:
 Standard workflow
@@ -33,27 +33,33 @@ Fruit(Snapshot) > Sow(Deploy)
 ### Pre-requisites
 ```
 For Redhat/CentOS
-$ curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
-$ yum install -y nodejs && yum install -y gcc-c++ make
 $ yum install -y psmisc
 
 For Ubuntu
-$ apt-get install -y npm
 $ apt-get install -y psmisc
 ```
 
 ### Download & install instructions:
-install with npm
+Install with npm:
 ```
+For Redhat/CentOS
+$ curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
+$ yum install -y nodejs && yum install -y gcc-c++ make
+$ npm -g install node-farmer
+$ cp -r /usr/lib/node_modules/node-farmer/examples/* .
+$ farmer help
+
+For Ubuntu
+$ apt-get install -y npm
 $ npm -g install node-farmer
 $ cp -r /usr/lib/node_modules/node-farmer/examples/* .
 $ farmer help
 ```
-upgrade with npm (if already installed an older version)
+Upgrade with npm (if already installed an older version)
 ```
 $ npm -g update node-farmer
 ```
-install without npm
+Install without npm:
 ```
 $ git clone https://github.com/disizjay/node-farmer.git
 $ cd node-farmer
