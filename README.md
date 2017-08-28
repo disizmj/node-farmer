@@ -3,7 +3,7 @@
 
 ## Stable release [2.0.0](http://npm-stats.org/#/node-farmer)
 
-### Workflow:
+### Workflow
 Standard workflow
 ```
 Seed(Input) > Sow(Deploy) > Fruit(Snapshot)
@@ -13,7 +13,7 @@ Reusability workflow
 Fruit(Snapshot) > Sow(Deploy)
 ```
 
-### Terminology:
+### Terminology
 ```
  Seed	: The input/instructions that runs on remote host/server
 
@@ -39,7 +39,7 @@ For Ubuntu
 $ apt-get install -y psmisc
 ```
 
-### Download & install instructions:
+### Download & install instructions
 Install with npm:
 ```
 For Redhat/CentOS
@@ -89,7 +89,7 @@ Step 4: You should be all set at this point
 	Read below usage instructions for execution syntax
 ```
 
-### Usage instructions:
+### Usage instructions
 ```
 Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 
@@ -122,7 +122,7 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 
 ```
 
-### Examples:
+### Examples
 See [examples](https://github.com/disizjay/node-farmer/tree/master/examples)
 
 ### How to contibute ? 
