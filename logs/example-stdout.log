@@ -1,0 +1,72 @@
+[root@disizjay ~]# ./farmer sow --user root --seed example-setup-apache-webserver --soil example-dev-servers
+
+                 _         __
+                | |       / _|
+ _ __   ___   __| | ___  | |_ __ _ _ __ _ __ ___   ___ _ __
+| '_ \ / _ \ / _` |/ _ \ |  _/ _` | '__| '_ ` _ \ / _ \ '__|
+| | | | (_) | (_| |  __/ | || (_| | |  | | | | | |  __/ |
+|_| |_|\___/ \__,_|\___| |_| \__,_|_|  |_| |_| |_|\___|_|
+
+          Copyright (c) 2017 MANIKUMAR JUTTUKONDA
+
+Visit <https://disizjay.github.io/node-farmer/> for more details
+                // Stable release: v2.0.1 //
+
+
+// ** Invoking farmer 'info' operation ** //
+
+Info: Farmer is verifying the quality of seeds and soils
+
+  Soil check: example-dev-servers
+  (1) soils found
+  Seed check: example-setup-apache-webserver
+  (1) seeds found
+
+Verifying SSH and remote user
+[192.168.1.3] SSH setup verified
+[192.168.1.3] Remote user[root] verified
+
+Info: Integrity check success
+
+// ** Invoking farmer 'sow' operation ** //
+
+Info: Farmer is deploying seeds in soils
+
+ Sowing seeds on host[192.168.1.3]
+
+Info: Waitig on (2) active thread(s)
+Info: Waitig on (2) active thread(s)
+Info: Waitig on (2) active thread(s)
+Info: Waitig on (2) active thread(s)
+Info: Waitig on (2) active thread(s)
+Info: Waitig on (2) active thread(s)
+
+Info: No active threads
+
+Printing execution summary. Please wait
+
+SUMMARY:
+------------------------------------------------
+ Seed log: example-setup-apache-webserver_192.168.1.3_3668.log
+ (9) succeeded
+ (0) failed
+
+ Commands: Total (9) Succeeded (9) Failed (0)
+------------------------------------------------
+
+Check logs[/root/canal/example-setup-apache-webserver_*] for entire logs
+
+// ** Invoking farmer 'harvest' sub-operation ** //
+
+Harvesting crop and saving fruit
+Info: Creating a snapshot of successful deployment
+
+Info: Sanpshot made successfully
+
+Saving fruit
+Info: Preserving snapshot for later use
+Fruit saved: /root/fruits/fruit-example-setup-apache-webserver-08-28-2017-3668.tar.gz
+
+Info: Snapshot successfully saved
+[root@disizjay ~]#
+

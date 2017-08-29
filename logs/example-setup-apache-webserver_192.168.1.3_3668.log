@@ -1,0 +1,138 @@
++ sudo yum clean all
+Loaded plugins: fastestmirror
+Repository nodesource is listed more than once in the configuration
+Repository nodesource-source is listed more than once in the configuration
+Cleaning repos: base extras nodesource updates
+Cleaning up everything
+Cleaning up list of fastest mirrors
++ '[' 0 -ne 0 ']'
+farm:::success
++ echo farm:::success
++ sudo yum -y update
+Loaded plugins: fastestmirror
+Repository nodesource is listed more than once in the configuration
+Repository nodesource-source is listed more than once in the configuration
+Determining fastest mirrors
+ * base: mirror.jax.hugeserver.com
+ * extras: mirror.jax.hugeserver.com
+ * updates: mirror.jax.hugeserver.com
+No packages marked for update
+farm:::success
++ '[' 0 -ne 0 ']'
++ echo farm:::success
++ sudo yum install -y httpd
+Loaded plugins: fastestmirror
+Repository nodesource is listed more than once in the configuration
+Repository nodesource-source is listed more than once in the configuration
+Loading mirror speeds from cached hostfile
+ * base: mirror.jax.hugeserver.com
+ * extras: mirror.jax.hugeserver.com
+ * updates: mirror.jax.hugeserver.com
+Resolving Dependencies
+--> Running transaction check
+---> Package httpd.x86_64 0:2.4.6-45.el7.centos.4 will be installed
+--> Processing Dependency: httpd-tools = 2.4.6-45.el7.centos.4 for package: httpd-2.4.6-45.el7.centos.4.x86_64
+--> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-45.el7.centos.4.x86_64
+--> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-45.el7.centos.4.x86_64
+--> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-45.el7.centos.4.x86_64
+--> Running transaction check
+---> Package apr.x86_64 0:1.4.8-3.el7 will be installed
+---> Package apr-util.x86_64 0:1.5.2-6.el7 will be installed
+---> Package httpd-tools.x86_64 0:2.4.6-45.el7.centos.4 will be installed
+---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch         Version                     Repository     Size
+================================================================================
+Installing:
+ httpd             x86_64       2.4.6-45.el7.centos.4       updates       2.7 M
+Installing for dependencies:
+ apr               x86_64       1.4.8-3.el7                 base          103 k
+ apr-util          x86_64       1.5.2-6.el7                 base           92 k
+ httpd-tools       x86_64       2.4.6-45.el7.centos.4       updates        84 k
+ mailcap           noarch       2.1.41-2.el7                base           31 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 3.0 M
+Installed size: 10 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              1.8 MB/s | 3.0 MB  00:01     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : apr-1.4.8-3.el7.x86_64                                       1/5 
+  Installing : apr-util-1.5.2-6.el7.x86_64                                  2/5 
+  Installing : httpd-tools-2.4.6-45.el7.centos.4.x86_64                     3/5 
+  Installing : mailcap-2.1.41-2.el7.noarch                                  4/5 
+  Installing : httpd-2.4.6-45.el7.centos.4.x86_64                           5/5 
+  Verifying  : httpd-tools-2.4.6-45.el7.centos.4.x86_64                     1/5 
+  Verifying  : mailcap-2.1.41-2.el7.noarch                                  2/5 
+  Verifying  : apr-1.4.8-3.el7.x86_64                                       3/5 
+  Verifying  : httpd-2.4.6-45.el7.centos.4.x86_64                           4/5 
+  Verifying  : apr-util-1.5.2-6.el7.x86_64                                  5/5 
+
+Installed:
+  httpd.x86_64 0:2.4.6-45.el7.centos.4                                          
+
+Dependency Installed:
+  apr.x86_64 0:1.4.8-3.el7                      apr-util.x86_64 0:1.5.2-6.el7   
+  httpd-tools.x86_64 0:2.4.6-45.el7.centos.4    mailcap.noarch 0:2.1.41-2.el7   
+
+Complete!
+farm:::success
++ '[' 0 -ne 0 ']'
++ echo farm:::success
++ sudo firewall-cmd --permanent --add-port=80/tcp
+success
+farm:::success
++ '[' 0 -ne 0 ']'
++ echo farm:::success
++ sudo firewall-cmd --permanent --add-port=443/tcp
+success
+farm:::success
++ '[' 0 -ne 0 ']'
++ echo farm:::success
++ sudo firewall-cmd --reload
+success
+farm:::success
++ '[' 0 -ne 0 ']'
++ echo farm:::success
++ sudo systemctl start httpd
+farm:::success
++ '[' 0 -ne 0 ']'
++ echo farm:::success
++ sudo systemctl enable httpd
+Created symlink from /etc/systemd/system/multi-user.target.wants/httpd.service to /usr/lib/systemd/system/httpd.service.
++ '[' 0 -ne 0 ']'
+farm:::success
++ echo farm:::success
++ sudo systemctl status httpd
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Mon 2017-08-28 21:15:35 EDT; 97ms ago
+     Docs: man:httpd(8)
+           man:apachectl(8)
+ Main PID: 3880 (httpd)
+   Status: "Processing requests..."
+   CGroup: /system.slice/httpd.service
+           ├─3880 /usr/sbin/httpd -DFOREGROUND
+           ├─3890 /usr/sbin/httpd -DFOREGROUND
+           ├─3891 /usr/sbin/httpd -DFOREGROUND
+           ├─3892 /usr/sbin/httpd -DFOREGROUND
+           ├─3893 /usr/sbin/httpd -DFOREGROUND
+           └─3895 /usr/sbin/httpd -DFOREGROUND
+
+Aug 28 21:15:25 disizjay systemd[1]: Starting The Apache HTTP Server...
+Aug 28 21:15:30 disizjay httpd[3880]: AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using fe80::223:8bff:fea9:f5a7. Set the 'ServerName' directive globally to suppress this message
+Aug 28 21:15:35 disizjay systemd[1]: Started The Apache HTTP Server.
+farm:::success
++ '[' 0 -ne 0 ']'
++ echo farm:::success
