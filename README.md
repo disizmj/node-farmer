@@ -1,7 +1,7 @@
 # A lightweight automation tool built for Linux machines
 ## No client/agent installation | Pure BASH over SSH | PLUG 'N' PLAY :rocket:
 
-## Stable release [2.0.0](http://npm-stats.org/#/node-farmer)
+## Stable release [2.0.1](http://npm-stats.org/#/node-farmer)
 
 ### Workflow
 Standard workflow

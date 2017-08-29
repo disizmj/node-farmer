@@ -1,0 +1,24 @@
+# Yum cleanup
+command:::sudo yum clean all
+
+# Update packages
+command:::sudo yum -y update
+
+# Install command
+command:::sudo yum install -y httpd
+
+# Allow the default HTTP and HTTPS port, ports 80 and 443, through firewalld
+command:::sudo firewall-cmd --permanent --add-port=80/tcp
+command:::sudo firewall-cmd --permanent --add-port=443/tcp
+
+# Reload firewall
+command:::sudo firewall-cmd --reload
+
+# Start Apache web server
+command:::sudo systemctl start httpd
+
+# Start Apache web server at boot
+command:::sudo systemctl enable httpd
+
+# Status of web server
+command:::sudo systemctl status httpd

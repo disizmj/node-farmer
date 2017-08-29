@@ -1,0 +1,23 @@
+# Arguments
+arg:::user_name="demouser";
+arg:::user_group="demogroup";
+arg:::dir_name="/root/demodir";
+
+# Commands to run on Remote
+# Creating a user
+command:::useradd $user_name
+
+# Creating a group
+command:::groupadd $user_group
+
+# Adding user to the group
+command:::usermod -a -G $user_group $user_name
+
+# Creating directory
+command:::mkdir -p $dir_name
+
+# Set ownership
+command:::chown -R $user_name:$user_group $dir_name
+
+# Set permissions
+command:::chmod -R 700 $dir_name
