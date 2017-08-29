@@ -42,7 +42,8 @@ $ apt-get install -y psmisc
 ### Download & install instructions
 Minimal Install // NO ROOT //
 ```
-curl https://raw.githubusercontent.com/disizjay/node-farmer/master/farmer > farmer; chmod +x farmer; mkdir canal fruits soils seeds;
+$ curl https://raw.githubusercontent.com/disizjay/node-farmer/master/farmer > farmer; chmod +x farmer; mkdir canal fruits soils seeds;
+$ ./farmer help
 ```
 Install with git // NO ROOT //
 ```
