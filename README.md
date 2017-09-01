@@ -8,7 +8,7 @@
 
 ### node-farmer(nf) simplifies automation for 'admin/developer' or 'devops' in day-day IT life, could be simple package management, application deployment or complex configuration management, infrastructure management(cloud/non-cloud), services management and many other IT automation activities. It can manage any number of hosts/servers basically any host that runs 'bash'
 ### Server-to-Server communication happens over SSH, pretty much everything runs over SSH which makes node-farmer a lightweight/agent-less automation tool. Programming/scripting like Java, Python, YAML is NOT required. Writing node-farmer(nf) inputs are as simple as putting bunch of commands in a file(see example [here](https://github.com/disizjay/node-farmer/blob/master/examples/seeds/example-setup-apache-webserver/httpd.plow))
-### node-farmer(nf) execution mode is always parallel that means it can deploy/run on x number of hosts/servers all in parallel, saving time money and everything.
+### node-farmer(nf) execution mode is always parallel that means it can deploy/run on x number of hosts/servers all in parallel saving time money and everything.
 
 ### // Demo //
 ![nf_sow_demo](https://raw.githubusercontent.com/disizjay/node-farmer/master/demo/execution.gif)
