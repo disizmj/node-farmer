@@ -1,6 +1,8 @@
 # A lightweight automation tool built for Linux machines
 ### ** No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket: **
-[![https://nodei.co/npm/node-farmer.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/node-farmer.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-farmer)
+
+[![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/disizjay/node-farmer/blob/master/LICENSE)
+
 ### // Demo //
 ![node-farmer demo](https://raw.githubusercontent.com/disizjay/node-farmer/master/demo/execution.gif)
 
@@ -130,7 +132,7 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 
 ### Examples
 See [examples](https://github.com/disizjay/node-farmer/tree/master/examples)
-Sample [logs](https://github.com/disizjay/node-farmer/tree/master/logs)
+& Sample [logs](https://github.com/disizjay/node-farmer/tree/master/logs)
 
 ### How to contibute ? 
 See [contributing](https://github.com/disizjay/node-farmer/blob/master/CONTRIBUTING.md)
