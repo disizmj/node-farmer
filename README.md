@@ -1,8 +1,6 @@
 # 🅝🅞🅓🅔-🅕🅐🅡🅜🅔🅡 [![NPM version][npm-image]][npm-url]
-# A lightweight automation tool built for Linux machines
-## No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket:
-
-## Stable release [2.0.2](http://npm-stats.org/#/node-farmer)
+## A lightweight automation tool built for Linux machines
+### No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket:
 
 ### Workflow
 Standard workflow
