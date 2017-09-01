@@ -7,7 +7,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-green.svg?style=flat)](https://github.com/disizjay/node-farmer/issues)
 
 ### // Demo //
-![node-farmer demo](https://raw.githubusercontent.com/disizjay/node-farmer/master/demo/execution.gif)
+![nf_sow_demo](https://raw.githubusercontent.com/disizjay/node-farmer/master/demo/execution.gif)
 
 ### Workflow
 Standard workflow
