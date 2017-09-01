@@ -1,10 +1,10 @@
 # A lightweight automation tool built for Linux machines
 ### ** No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket: **
 
-[![npm](https://img.shields.io/badge/npm-install-orange.svg)](https://www.npmjs.com/package/node-farmer)
+[![npm](https://img.shields.io/badge/npm-install-red.svg)](https://www.npmjs.com/package/node-farmer)
 [![HitCount](https://hitt.herokuapp.com/disizjay/node-farmer.svg)](https://github.com/disizjay/node-farmer)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/disizjay/node-farmer/blob/master/LICENSE)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-red.svg?style=flat)](https://github.com/disizjay/node-farmer/issues)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg?style=flat)](https://github.com/disizjay/node-farmer/issues)
 
 ### // Demo //
 ![node-farmer demo](https://raw.githubusercontent.com/disizjay/node-farmer/master/demo/execution.gif)
