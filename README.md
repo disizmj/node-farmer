@@ -1,5 +1,6 @@
 # A lightweight automation tool built for Linux machines
-### ** No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket: **
+## No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket:
+### node-farmer(nf) is used to automate admin/developer day-day activities by just providing list of commands(could be simple package management or complex installation/configuration) in a file and target hosts (any number of hosts/servers), node-farmer(nf) will run commands in all the target hosts in parallel
 
 [![npm](https://img.shields.io/badge/npm-install-red.svg)](https://www.npmjs.com/package/node-farmer)
 [![HitCount](https://hitt.herokuapp.com/disizjay/node-farmer.svg)](https://github.com/disizjay/node-farmer)
