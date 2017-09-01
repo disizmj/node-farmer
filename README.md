@@ -1,5 +1,6 @@
+# 🅝🅞🅓🅔-🅕🅐🅡🅜🅔🅡 [![NPM version][npm-image]][npm-url]
 # A lightweight automation tool built for Linux machines
-## No client/agent installation | Pure BASH over SSH | PLUG 'N' PLAY :rocket:
+## No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket:
 
 ## Stable release [2.0.2](http://npm-stats.org/#/node-farmer)
 
@@ -160,3 +161,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+[npm-url]: https://www.npmjs.com/package/node-farmer
+[npm-image]: http://img.shields.io/npm/v/node-notifier.svg?style=flat
+[npm-downloads]: http://img.shields.io/npm/dm/node-notifier.svg?style=flat
