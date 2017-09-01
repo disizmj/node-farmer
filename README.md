@@ -1,6 +1,6 @@
 ## A lightweight automation tool built for Linux machines
 ### ** No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket: **
-# 🅝🅞🅓🅔-🅕🅐🅡🅜🅔🅡 [![npm-image]][npm-url]
+[![https://nodei.co/npm/YOUR-MODULE-NAME.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/YOUR-MODULE-NAME.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/YOUR-MODULE-NAME)
 ### // Demo //
 ![node-farmer demo](https://raw.githubusercontent.com/disizjay/node-farmer/master/demo/execution.gif)
 
@@ -161,6 +161,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-[npm-url]: https://www.npmjs.com/package/node-farmer
-[npm-image]: http://img.shields.io/npm/v/node-notifier.svg?style=flat
-[npm-downloads]: http://img.shields.io/npm/dm/node-notifier.svg?style=flat
