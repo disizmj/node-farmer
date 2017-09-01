@@ -2,6 +2,9 @@
 ## A lightweight automation tool built for Linux machines
 ### No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket:
 
+### Demo
+![node-farmer demo](https://raw.githubusercontent.com/disizjay/node-farmer/master/demo/execution.gif)
+
 ### Workflow
 Standard workflow
 ```
