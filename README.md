@@ -3,6 +3,7 @@
 
 [![npm](https://img.shields.io/badge/npm-install-orange.svg)](https://www.npmjs.com/package/node-farmer)
 [![HitCount](https://hitt.herokuapp.com/disizjay/node-farmer.svg)](https://github.com/disizjay/node-farmer)
+[![HitCount](https://img.shields.io/badge/total-hits-green.svg)](https://github.com/disizjay/node-farmer)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/disizjay/node-farmer/blob/master/LICENSE)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-red.svg?style=flat)](https://github.com/disizjay/node-farmer/issues)
 
