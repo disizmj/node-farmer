@@ -1,6 +1,6 @@
 ## A lightweight automation tool built for Linux machines
 ### ** No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket: **
-[![https://nodei.co/npm/YOUR-MODULE-NAME.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/YOUR-MODULE-NAME.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/YOUR-MODULE-NAME)
+[![https://nodei.co/npm/node-farmer.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/node-farmer.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-farmer)
 ### // Demo //
 ![node-farmer demo](https://raw.githubusercontent.com/disizjay/node-farmer/master/demo/execution.gif)
 
