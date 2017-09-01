@@ -2,7 +2,7 @@
 ### ** No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket: **
 
 [![npm](https://img.shields.io/badge/npm-install-brightgreen.svg)](https://www.npmjs.com/package/node-farmer)
-[![HitCount](https://hitt.herokuapp.com/disizjay/node-farmer.svg)](https://github.com/disizjay/mode-farmer)
+[![HitCount](https://hitt.herokuapp.com/disizjay/node-farmer.svg)](https://github.com/disizjay/node-farmer)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/disizjay/node-farmer/blob/master/LICENSE)
 
 ### // Demo //
