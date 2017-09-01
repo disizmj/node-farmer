@@ -16,4 +16,5 @@
 08/28/2017 : (v2.0.1) Added new dependency checks
 08/29/2017 : (v2.0.2) root/non-root install
 08/31/2017 : (v2.0.3) Added GIF
+09/01/2017 : (v2.0.4) NPM changes
 ```
