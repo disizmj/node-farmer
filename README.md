@@ -148,7 +148,7 @@ See [examples](https://github.com/disizjay/node-farmer/tree/master/examples)
 ### // Issues //
 Please submit issues [here](https://github.com/disizjay/node-farmer/issues/new)
 
-### License
+### // License //
 ```
 MIT License
 
