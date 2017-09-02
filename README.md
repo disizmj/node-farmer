@@ -13,7 +13,7 @@
 ### // Demo //
 ![nf_sow_demo](https://raw.githubusercontent.com/disizjay/node-farmer/master/demo/execution.gif)
 
-### Workflow
+### // Workflow //
 Standard workflow
 ```
 Seed(Input) > Sow(Deploy) > Fruit(Snapshot)
@@ -23,7 +23,7 @@ Reusability workflow
 Fruit(Snapshot) > Sow(Deploy)
 ```
 
-### Terminology
+### // nf Terminology //
 ```
  Seed	: The input/instructions that runs on remote host/server
 
@@ -40,7 +40,7 @@ Fruit(Snapshot) > Sow(Deploy)
  Canal	: Directory to store runtime temporary files and logs
 ```
 
-### Pre-requisites
+### // Pre-requisites //
 ```
 For Redhat/CentOS
 $ yum update
@@ -51,7 +51,7 @@ $ apt-get update
 $ apt-get install -y psmisc
 ```
 
-### Download & install instructions
+### // Download & install instructions //
 Minimal Install // NO ROOT //
 ```
 $ curl https://raw.githubusercontent.com/disizjay/node-farmer/master/farmer > farmer; chmod +x farmer; mkdir canal fruits soils seeds;
@@ -86,7 +86,7 @@ Upgrade with npm (if already installed an older version) // ROOT REQUIRED //
 $ npm -g update node-farmer
 ```
 
-### Getting started
+### // Getting started //
 ```
 Step 1: Download and install node-farmer from above install instructions
 
@@ -108,7 +108,7 @@ Step 4: You should be all set at this point
 	Read below usage instructions for execution syntax
 ```
 
-### Usage instructions
+### // Usage instructions //
 ```
 Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 
@@ -141,14 +141,11 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 
 ```
 
-### Examples
+### // Examples //
 See [examples](https://github.com/disizjay/node-farmer/tree/master/examples)
 & [logs](https://github.com/disizjay/node-farmer/tree/master/logs)
 
-### How to contibute ? 
-See [contributing](https://github.com/disizjay/node-farmer/blob/master/CONTRIBUTING.md)
-
-### Issues ?
+### // Issues //
 Please submit issues [here](https://github.com/disizjay/node-farmer/issues/new)
 
 ### License
