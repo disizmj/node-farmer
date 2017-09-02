@@ -15,6 +15,5 @@
 08/28/2017 : (v2.0.0) Second stable release
 08/28/2017 : (v2.0.1) Added new dependency checks
 08/29/2017 : (v2.0.2) root/non-root install
-08/31/2017 : (v2.0.3) Added GIF
-09/01/2017 : (v2.0.7) NPM changes and README update
+09/01/2017 : (v2.1.0) Added GIF and README updates
 ```

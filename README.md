@@ -52,19 +52,19 @@ $ apt-get install -y psmisc
 ```
 
 ### // Download & install instructions //
-Minimal Install // NO ROOT //
+Minimal Install [NO ROOT]
 ```
 $ curl https://raw.githubusercontent.com/disizjay/node-farmer/master/farmer > farmer; chmod +x farmer; mkdir canal fruits soils seeds;
 $ ./farmer help
 ```
-Install with git // NO ROOT //
+Install with git [NO ROOT]
 ```
 $ git clone https://github.com/disizjay/node-farmer.git
 $ cd node-farmer
 $ mkdir canal fruits soils seeds
 $ ./farmer help
 ```
-Install with npm // ROOT REQUIRED //
+Install with npm [ROOT REQUIRED]
 ```
 For Redhat/CentOS
 $ yum update
@@ -81,7 +81,7 @@ $ npm -g install node-farmer
 $ mkdir canal fruits soils seeds
 $ farmer help
 ```
-Upgrade with npm (if already installed an older version) // ROOT REQUIRED //
+Upgrade with npm (if already installed an older version) [ROOT REQUIRED]
 ```
 $ npm -g update node-farmer
 ```
