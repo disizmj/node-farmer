@@ -1,5 +1,5 @@
 # A lightweight automation tool built for Linux machines
-## No client/agent | Pure BASH over SSH | PLUG 'N' PLAY :rocket:
+## // AGENTLESS | PURE BASH OVER SSH | PLUG N PLAY //
 
 [![npm](https://img.shields.io/badge/npm-install-red.svg)](https://www.npmjs.com/package/node-farmer)
 [![HitCount](https://hitt.herokuapp.com/disizjay/node-farmer.svg)](https://github.com/disizjay/node-farmer)
