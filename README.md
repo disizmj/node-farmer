@@ -1,5 +1,5 @@
 # A lightweight automation tool built for Linux machines
-## // AGENTLESS | PURE BASH OVER SSH | PLUG N PLAY //
+## AGENTLESS ~ PURE BASH OVER SSH ~ PLUG N PLAY
 
 [![npm](https://img.shields.io/badge/npm-install-red.svg)](https://www.npmjs.com/package/node-farmer)
 [![HitCount](https://hitt.herokuapp.com/disizjay/node-farmer.svg)](https://github.com/disizjay/node-farmer)
@@ -10,10 +10,10 @@
 ### Server-to-Server communication happens over SSH, pretty much everything runs over SSH which makes node-farmer a lightweight/agent-less automation tool. Programming/scripting like Java, Python, YAML is NOT required. Writing node-farmer(nf) inputs are as simple as putting bunch of commands in a file(see example [here](https://github.com/disizjay/node-farmer/blob/master/examples/seeds/example-setup-apache-webserver/httpd.plow))
 ### node-farmer(nf) execution mode is always parallel that means it can deploy/run on x number of hosts/servers all in parallel saving time money and everything.
 
-### // Demo //
+### ~ Demo ~
 ![nf_sow_demo](https://raw.githubusercontent.com/disizjay/node-farmer/master/demo/execution.gif)
 
-### // Workflow //
+### ~ Workflow ~
 Standard workflow
 ```
 Seed(Input) > Sow(Deploy) > Fruit(Snapshot)
