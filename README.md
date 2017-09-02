@@ -43,9 +43,11 @@ Fruit(Snapshot) > Sow(Deploy)
 ### Pre-requisites
 ```
 For Redhat/CentOS
+$ yum update
 $ yum install -y psmisc
 
 For Ubuntu
+$ apt-get update
 $ apt-get install -y psmisc
 ```
 
@@ -59,22 +61,24 @@ Install with git // NO ROOT //
 ```
 $ git clone https://github.com/disizjay/node-farmer.git
 $ cd node-farmer
-$ cp -r examples/* .
+$ mkdir canal fruits soils seeds
 $ ./farmer help
 ```
 Install with npm // ROOT REQUIRED //
 ```
 For Redhat/CentOS
+$ yum update
 $ curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
 $ yum install -y nodejs && yum install -y gcc-c++ make
 $ npm -g install node-farmer
-$ cp -r /usr/lib/node_modules/node-farmer/examples/* .
+$ mkdir canal fruits soils seeds
 $ farmer help
 
 For Ubuntu
+$ apt-get update
 $ apt-get install -y npm
 $ npm -g install node-farmer
-$ cp -r /usr/lib/node_modules/node-farmer/examples/* .
+$ mkdir canal fruits soils seeds
 $ farmer help
 ```
 Upgrade with npm (if already installed an older version) // ROOT REQUIRED //
