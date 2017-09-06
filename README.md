@@ -1,8 +1,7 @@
 # A lightweight automation tool built for Linux machines
 ## || AGENTLESS ~ BASH OVER SSH ~ PLUG N PLAY ||
 
-[![npm](https://img.shields.io/badge/npm-install-red.svg)](https://www.npmjs.com/package/node-farmer)
-[![HitCount](https://hitt.herokuapp.com/disizjay/node-farmer.svg)](https://github.com/disizjay/node-farmer)
+[![npm](https://img.shields.io/badge/npm-package-red.svg)](https://www.npmjs.com/package/node-farmer)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/disizjay/node-farmer/blob/master/LICENSE)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-green.svg?style=flat)](https://github.com/disizjay/node-farmer/issues)
 
@@ -145,8 +144,8 @@ Usage: farmer [option] --user [username] --seed [seedname] --soil [soilname]
 See [examples](https://github.com/disizjay/node-farmer/tree/master/examples)
 & [logs](https://github.com/disizjay/node-farmer/tree/master/logs)
 
-### // Issues //
-Please submit issues [here](https://github.com/disizjay/node-farmer/issues/new)
+### // Questions & Issues //
+Please submit [here](https://github.com/disizjay/node-farmer/issues/new)
 
 ### // License //
 ```

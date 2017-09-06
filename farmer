@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 
 # MIT License
 #
@@ -27,6 +27,7 @@
 # -----------------------------------------------------------------------
 
 # variables
+START_TIME=$SECONDS
 pid=$$
 whereami=`pwd`
 home=${whereami}
@@ -325,7 +326,7 @@ echo -e '
 	  Copyright (c) 2017 MANIKUMAR JUTTUKONDA
 
 Visit <https://disizjay.github.io/node-farmer/> for more details
-		// Stable release: v2.1.0 //
+		// Stable release: v2.1.1 //
 '
 
 # argument check
@@ -461,6 +462,8 @@ case $1 in
 				farmer_sow
 				farmer_harvest
                         fi
+			ELAPSED_TIME=$(( $SECONDS - $START_TIME ))	
+			echo "Total execution time is $(( $ELAPSED_TIME / 60 )) min and $(( $ELAPSED_TIME % 60 )) sec"
 		fi
 		;;
 	
@@ -524,6 +527,8 @@ case $1 in
 			else
                                 echo "Info: Integrity check success"
 			fi
+                       	ELAPSED_TIME=$(( $SECONDS - $START_TIME ))
+                        echo "Total execution time is $(( $ELAPSED_TIME / 60 )) min and $(( $ELAPSED_TIME % 60 )) sec" 
                 fi
 		;;
 
@@ -552,6 +557,8 @@ case $1 in
                                         ;;
                         esac
 			farmer_feed
+                       	ELAPSED_TIME=$(( $SECONDS - $START_TIME ))
+                        echo "Total execution time is $(( $ELAPSED_TIME / 60 )) min and $(( $ELAPSED_TIME % 60 )) sec" 
 		fi
 		;;
 

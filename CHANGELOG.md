@@ -16,4 +16,5 @@
 08/28/2017 : (v2.0.1) Added new dependency checks
 08/29/2017 : (v2.0.2) root/non-root install
 09/01/2017 : (v2.1.0) Added GIF and README updates
+09/05/2017 : (v2.1.1) Added total execution time
 ```
